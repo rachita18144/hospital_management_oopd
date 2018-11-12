@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="patient_portal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PatientController">
+   <children>
+      <AnchorPane layoutX="96.0" layoutY="24.0" prefHeight="77.0" prefWidth="769.0" style="-fx-background-color: #61D581;">
+         <children>
+            <Label layoutX="181.0" layoutY="14.0" prefHeight="42.0" prefWidth="338.0" text="PATIENT PORTAL" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="36.0" />
+               </font>
+            </Label>
+            <Button layoutX="637.0" layoutY="23.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="109.0" style="-fx-background-color: #ffffff;" text="Logout" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="30.0" layoutY="132.0" prefHeight="414.0" prefWidth="267.0" style="-fx-background-color: #61D581;">
+         <children>
+            <Label layoutX="34.0" layoutY="109.0" prefHeight="44.0" prefWidth="219.0" text="Welcome to" textFill="#fcfafa">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="48.0" layoutY="166.0" prefHeight="17.0" prefWidth="171.0" text="Patient Portal" textFill="#fcf9f9">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="book_appointment" layoutX="354.0" layoutY="132.0" prefHeight="192.0" prefWidth="228.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fitHeight="92.0" fitWidth="96.0" layoutX="76.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/icon.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="36.0" layoutY="141.0" prefHeight="23.0" prefWidth="161.0" text="Book Appointment">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="view_doctor_profile" layoutX="617.0" layoutY="132.0" prefHeight="195.0" prefWidth="226.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fitHeight="112.0" fitWidth="105.0" layoutX="64.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/avatar.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="40.0" layoutY="140.0" prefHeight="23.0" prefWidth="193.0" text="View Doctor Profile">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="search_doctor" layoutX="352.0" layoutY="347.0" prefHeight="192.0" prefWidth="228.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fitHeight="95.0" fitWidth="95.0" layoutX="64.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/search.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="48.0" layoutY="144.0" prefHeight="23.0" prefWidth="161.0" text="Search Doctor">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="edit_profile" layoutX="620.0" layoutY="348.0" prefHeight="189.0" prefWidth="232.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fitHeight="92.0" fitWidth="105.0" layoutX="73.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/man-user.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="69.0" layoutY="142.0" prefHeight="23.0" prefWidth="146.0" text="Edit Profile">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="107.0" fitWidth="116.0" layoutX="21.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/man.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

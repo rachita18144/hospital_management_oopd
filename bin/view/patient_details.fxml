@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="label1" alignment="CENTER" layoutX="125.0" layoutY="28.0" prefHeight="78.0" prefWidth="754.0" style="-fx-background-color: #58D68D;" text="ENTER DETAILS" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="120.0" fitWidth="130.0" layoutX="26.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Downloads/man.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="34.0" layoutY="142.0" prefHeight="427.0" prefWidth="831.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Label layoutX="56.0" layoutY="45.0" text="Medical condition/Disease">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="54.0" layoutY="109.0" text="Prefence">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="53.0" layoutY="208.0" text="Suitable Days and Timings">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField layoutX="383.0" layoutY="38.0" prefHeight="34.0" prefWidth="349.0" />
+            <CheckBox layoutX="61.0" layoutY="164.0" mnemonicParsing="false" text="Allopethic">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="227.0" layoutY="164.0" mnemonicParsing="false" text="Ayurvedic">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="606.0" layoutY="164.0" mnemonicParsing="false" text="Allopathic">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="423.0" layoutY="164.0" mnemonicParsing="false" text="Homeopathy">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <Button layoutX="25.0" layoutY="361.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="791.0" style="-fx-background-color: #61D581;" text="Next" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <CheckBox layoutX="60.0" layoutY="256.0" mnemonicParsing="false" text="Weekends">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="400.0" layoutY="255.0" mnemonicParsing="false" text="Weekdays">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="60.0" layoutY="295.0" mnemonicParsing="false" text="Morning">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="399.0" layoutY="295.0" mnemonicParsing="false" text="Evening">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="623.0" layoutY="295.0" mnemonicParsing="false" text="Night">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
