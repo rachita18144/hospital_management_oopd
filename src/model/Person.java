@@ -1,63 +1,89 @@
 package model;
 
+import javafx.beans.property.SimpleStringProperty;
+
 class Person 
 {
-String firstName;
-String LastName;
-String address;
-String contact;
-String dob;
-String gender;
+	private SimpleStringProperty firstName;
+	private SimpleStringProperty LastName;
+	private SimpleStringProperty address;
+	String email;
+	String contact;
+	String dob;
+	String gender;
 
 	public Person () {}
 
 	public Person(String firstName, String lastName, String address, String contact, String dob, String gender) {
-	this.firstName = firstName;
-	LastName = lastName;
-	this.address = address;
-	this.contact = contact;
-	this.dob = dob;
-	this.gender = gender;
+		this.firstName = new SimpleStringProperty(firstName);
+		this.LastName = new SimpleStringProperty(lastName);
+		this.address = new SimpleStringProperty(address);
+		this.contact = contact;
+		this.dob = dob;
+		this.gender = gender;
 	}
 
 	public String getFirstName() 
-		{return firstName;}
-	
-	public void setFirstName(String firstName) 
-		{this.firstName = firstName;}
-	
+	{
+		return firstName.get();
+	}
+
+	public void setFirstName(String fName) 
+	{
+		this.firstName = new SimpleStringProperty(fName);
+		firstName.set(fName);
+	}
+
 	public String getLastName() 
-		{return LastName;}
-	
+	{
+		return LastName.get();
+	}
+
 	public void setLastName(String lastName) 
-		{LastName = lastName;}
-	
+	{
+		this.LastName = new SimpleStringProperty(lastName);
+		LastName.set(lastName);
+	}
+
 	public String getAddress() 
-		{return address;}
-	
-	public void setAddress(String address) 
-		{this.address = address;}
-	
+	{
+		return address.get();
+	}
+
+	public void setAddress(String addressVal) 
+	{
+		this.address = new SimpleStringProperty(addressVal);
+		this.address.set(addressVal);
+	}
+
 	public String getContact()
-		{return contact;}
-	
+	{return contact;}
+
 	public void setContact(String contact) 
-		{this.contact = contact;}
-	
+	{this.contact = contact;}
+
 	public String getDob() 
-		{return dob;}
-	
+	{return dob;}
+
 	public void setDob(String dob) 
-		{this.dob = dob;}
-	
+	{this.dob = dob;}
+
 	public String getGender() 
-		{return gender;}
-	
+	{return gender;}
+
 	public void setGender(String gender) 
-		{this.gender = gender;}
+	{this.gender = gender;}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public void Login()
-		{
-	
-		}
+	{
+
+	}
 }

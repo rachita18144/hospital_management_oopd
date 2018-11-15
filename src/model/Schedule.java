@@ -1,28 +1,28 @@
 package model;
 import java.util.*;
 
-class Schedule 
-{
-private ArrayList<String> days;
-private String startTime;
-private String endTime;
+public class Schedule {
+	private ArrayList<String> days = new ArrayList<String>();
+	private Date startTime;
+	private Date endTime;
 
-	public ArrayList<String> getDays() 
-		{return days;}
-	public void setDays(ArrayList<String> days) 
-		{this.days = days;}
-	public String getStartTime() 
-		{return startTime;}
-	public void setStartTime(String startTime) 
-		{this.startTime = startTime;}
-	public String getEndTime() {
-		return endTime;}
-	public void setEndTime(String endTime) 
-	{this.endTime = endTime;}
-
-	public void showSchedule()
-	{
-		
+	public ArrayList<String> getDays() {
+		return days;
+	}
+	public void setDays(ArrayList<String> days) {
+		this.days = days;
+	}
+	public Date getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
+	}
+	public Date getEndTime() {
+		return endTime;
+	}
+	public void setEndTime(Date endTime) {
+		this.endTime = endTime;
 	}
 
 }

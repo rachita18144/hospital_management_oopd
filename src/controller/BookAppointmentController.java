@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -65,6 +64,10 @@ public class BookAppointmentController implements Initializable{
 		//doctorObservableList.addAll(doctorList);
 		list_view.setItems(doctorObservableList);
 		list_view.setCellFactory(doctorListView -> new DoctorListViewCell());
+	}
+	
+	public void setStage(int index) {
+		System.out.println(index);
 	}
 	
 	public void myhandle(MouseEvent event)

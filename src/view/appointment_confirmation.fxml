@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="confirmation_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BookingConfirmationController">
+   <children>
+      <Label fx:id="label1" alignment="CENTER" layoutX="134.0" layoutY="32.0" prefHeight="78.0" prefWidth="723.0" style="-fx-background-color: #58D68D;" text="APPOINTMENT CONFIRMATION" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="120.0" fitWidth="130.0" layoutX="51.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/man.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="50.0" layoutY="164.0" prefHeight="393.0" prefWidth="811.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Label layoutX="43.0" layoutY="27.0" prefHeight="64.0" prefWidth="701.0" text="Your Appointment has been confirmed. Please bring all necessary documents." wrapText="true">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="192.0" layoutY="158.0" text="Doctor Name :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="188.0" layoutY="205.0" text="Date Of Appointment :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="189.0" layoutY="257.0" text="Time Of Appointment :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="doctor_name" layoutX="445.0" layoutY="158.0" text="Dr. Rachita Bhagchandani">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="appt_date" layoutX="444.0" layoutY="205.0" text="23-10-2018">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="appt_time" layoutX="451.0" layoutY="257.0" text="8 pm">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="51.0" layoutY="341.0" text="Thank You for using Smart Health System .">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="search_doctor_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SearchDoctorController">
+   <children>
+      <AnchorPane layoutX="129.0" layoutY="30.0" prefHeight="79.0" prefWidth="745.0" style="-fx-background-color: #61D581;">
+         <children>
+            <Label layoutX="191.0" layoutY="19.0" text="SEARCH DOCTOR" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="145.0" fitWidth="124.0" layoutX="40.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/man.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="doctor_table" layoutX="24.0" layoutY="209.0" prefHeight="356.0" prefWidth="857.0">
+        <columns>
+          <TableColumn fx:id="dr_id" prefWidth="113.82179641723633" text="Doctor ID" />
+          <TableColumn fx:id="first_name" prefWidth="113.82179641723633" text="First Name" />
+          <TableColumn fx:id="last_name" prefWidth="142.1822052001953" text="Last Name" />
+          <TableColumn fx:id="specialization" prefWidth="174.81784057617188" text="Specialization" />
+          <TableColumn fx:id="address" prefWidth="310.0" text="Address" />
+        </columns>
+      </TableView>
+      <TextField fx:id="search_box" layoutX="468.0" layoutY="146.0" />
+      <Label layoutX="304.0" layoutY="147.0" text="Filter Doctors ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

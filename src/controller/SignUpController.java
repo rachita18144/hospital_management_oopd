@@ -96,7 +96,6 @@ public class SignUpController implements Initializable {
 			 }catch (IOException e)	{
 				  e.printStackTrace();
 			 }
-				
 				newscene= new Scene(content);
 				stage.setScene(newscene);
 		}
