@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -13,7 +12,7 @@
 
 <AnchorPane fx:id="edit_profile_pane" minHeight="0.0" minWidth="0.0" prefHeight="599.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditPatientController">
    <children>
-      <AnchorPane layoutX="44.0" layoutY="165.0" prefHeight="276.0" prefWidth="509.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane layoutX="44.0" layoutY="165.0" prefHeight="236.0" prefWidth="509.0" style="-fx-background-color: #ffffff;">
          <children>
             <TextField fx:id="first_name" layoutX="155.0" layoutY="17.0" text="DR Bernadette Carr " />
             <TextField fx:id="last_name" layoutX="157.0" layoutY="55.0" text="MBBS, MD" />
@@ -44,13 +43,6 @@
                   <Image url="@../../images/man.png" />
                </image>
             </ImageView>
-            <Label layoutX="18.0" layoutY="185.0" prefHeight="27.0" prefWidth="90.0" text="Location">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <RadioButton layoutX="151.0" layoutY="190.0" mnemonicParsing="false" text="OPD" />
-            <RadioButton layoutX="302.0" layoutY="190.0" mnemonicParsing="false" text="Local" />
          </children></AnchorPane>
       <Label fx:id="label1" alignment="CENTER" layoutX="89.0" layoutY="31.0" prefHeight="78.0" prefWidth="776.0" style="-fx-background-color: #58D68D;" text="PATIENT PROFILE" textFill="WHITE">
          <font>
@@ -58,7 +50,7 @@
          </font>
       </Label>
       <Label layoutX="576.0" layoutY="166.0" prefHeight="230.0" prefWidth="291.0" style="-fx-background-color: #F4D03F;" />
-      <Button fx:id="updateProfile" layoutX="36.0" layoutY="497.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="833.0" style="-fx-background-color: #229954;" text="UPDATE PROFILE" textFill="#fffefe">
+      <Button fx:id="updateProfile" layoutX="38.0" layoutY="491.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="831.0" style="-fx-background-color: #229954;" text="UPDATE PROFILE" textFill="#fffefe">
          <font>
             <Font size="24.0" />
          </font>

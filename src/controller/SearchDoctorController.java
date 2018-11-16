@@ -24,7 +24,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.input.MouseEvent;
-import model.DoctorModel;
+import model.GetDoctorDetailsModel;
 import model.Doctor;
 
 
@@ -63,7 +63,7 @@ public class SearchDoctorController implements Initializable {
 
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		doctorList = DoctorModel.getAllDoctorDetails();
+		doctorList = GetDoctorDetailsModel.getAllDoctorDetails();
 		System.out.println(doctorList.get(0).getFirstName());
 
 		//TODO:Set doctor details in table

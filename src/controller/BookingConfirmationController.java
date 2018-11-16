@@ -26,7 +26,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Doctor;
-import model.DoctorModel;
+import model.GetDoctorDetailsModel;
 
 public class BookingConfirmationController implements Initializable {
 	

@@ -26,7 +26,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Doctor;
-import model.DoctorModel;
+import model.GetDoctorDetailsModel;
 
 public class ConfirmAppointmentController implements Initializable{
 
@@ -127,7 +127,7 @@ public class ConfirmAppointmentController implements Initializable{
 			{
 				if(available) {
 					System.out.println("im here babe");
-					DoctorModel.enterAppointmentDetailsinDB(doctor.getDrID(), appointmentDate, appointmentTime);
+					GetDoctorDetailsModel.enterAppointmentDetailsinDB(doctor.getDrID(), appointmentDate, appointmentTime);
 				}else {
 					//TODO: Display error box
 					return;

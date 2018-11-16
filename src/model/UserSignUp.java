@@ -127,7 +127,7 @@ public class UserSignUp {
 			}
 
 			String email = rs.getString("email_id");
-			saveDoctorIdInFile(rs.getString("id"));
+			saveDoctorIdInFile(rs.getString("dID"));
 			String verifyPass = rs.getString("password");
 			if(email.equals(username) && verifyPass.equals(password)) {
 				System.out.println("correct");

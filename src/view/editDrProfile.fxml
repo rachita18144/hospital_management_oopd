@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="599.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditDoctorProfileController">
+   <children>
+      <AnchorPane layoutX="34.0" layoutY="137.0" prefHeight="379.0" prefWidth="509.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <TextField fx:id="name" layoutX="130.0" layoutY="17.0" text="DR Bernadette Carr " />
+            <TextField fx:id="education" layoutX="130.0" layoutY="55.0" text="MBBS, MD" />
+            <TextField fx:id="department" layoutX="130.0" layoutY="97.0" text="CARDIOLOGIST" />
+            <TextField fx:id="experience" layoutX="130.0" layoutY="141.0" text="12 " />
+            <Label layoutX="14.0" layoutY="19.0" prefHeight="27.0" prefWidth="67.0" text="NAME">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="57.0" prefHeight="27.0" prefWidth="105.0" text="Education">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="99.0" prefHeight="27.0" prefWidth="101.0" text="Department">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="143.0" prefHeight="27.0" prefWidth="90.0" text="Experience">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="181.0" prefHeight="27.0" prefWidth="90.0" text="Contact ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="contact" layoutX="130.0" layoutY="179.0" text="9876541234" />
+         </children></AnchorPane>
+      <Label fx:id="label1" alignment="CENTER" layoutX="88.0" layoutY="19.0" prefHeight="78.0" prefWidth="811.0" style="-fx-background-color: #58D68D;" text="DOCTOR PROFILE" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="label2" alignment="CENTER" layoutX="26.0" layoutY="359.0" prefHeight="236.0" prefWidth="282.0" textFill="#252424">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Circle fill="#229954" layoutX="126.0" layoutY="58.0" radius="55.0" stroke="BLACK" strokeType="INSIDE" />
+      <ImageView fitHeight="101.0" fitWidth="104.0" layoutX="75.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/doctor.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="105.0" fitWidth="127.0" layoutX="379.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/doctor.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="564.0" layoutY="139.0" prefHeight="184.0" prefWidth="291.0" style="-fx-background-color: #F4D03F;" />
+      <Label layoutX="564.0" layoutY="331.0" prefHeight="177.0" prefWidth="291.0" style="-fx-background-color: #F4D03F;" />
+      <Button fx:id="updateProfile" layoutX="40.0" layoutY="528.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="820.0" style="-fx-background-color: #229954;" text="UPDATE PROFILE" textFill="#fffefe">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Text layoutX="585.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text layoutX="645.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" SCHEDULE" wrappingWidth="134.56640625">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Label layoutX="639.0" layoutY="155.0" text="LOCATION">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="655.0" layoutY="609.0" prefHeight="121.0" prefWidth="243.0" text="2, Tumkur Service Road, Goraguntepalya, Landmark: Near BMTC Bus Stop And Opposite Taj Vivanta, Bangalore" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="home" fitHeight="51.0" fitWidth="43.0" layoutX="5.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/icons8-home-page-50.png" />
+         </image>
+      </ImageView>
+      <TextArea fx:id="address" layoutX="571.0" layoutY="189.0" prefHeight="121.0" prefWidth="276.0" text="2, Tumkur Service Road&#10; Goraguntepalya&#10; Landmark: Near BMTC Bus Stop&#10; And Opposite Taj Vivanta&#10; Bangalore" />
+      <TextArea fx:id="bio" layoutX="45.0" layoutY="390.0" prefHeight="121.0" prefWidth="488.0" text="Passionate about quality primary care including acute and chronic &#10;medical, illnesses. Special interest in diabetes management and &#10;research, non-interventional and preventive cardiology." />
+      <Label layoutX="48.0" layoutY="361.0" prefHeight="27.0" prefWidth="90.0" text="BIO :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="571.0" layoutY="377.0" prefHeight="27.0" prefWidth="67.0" text="DAYS">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="571.0" layoutY="467.0" prefHeight="27.0" prefWidth="67.0" text="TIME">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="stime" layoutX="634.0" layoutY="465.0" prefHeight="27.0" prefWidth="101.0" text="11:00 AM" />
+      <TextField fx:id="etime" layoutX="746.0" layoutY="465.0" prefHeight="27.0" prefWidth="101.0" text="8:00 PM" />
+      <CheckBox fx:id="mon" layoutX="639.0" layoutY="380.0" mnemonicParsing="false" text="Mon" />
+      <CheckBox fx:id="tue" layoutX="709.0" layoutY="380.0" mnemonicParsing="false" text="Tue" />
+      <CheckBox fx:id="wed" layoutX="783.0" layoutY="380.0" mnemonicParsing="false" text="Wed" />
+      <CheckBox fx:id="thu" layoutX="638.0" layoutY="409.0" mnemonicParsing="false" text="Thu" />
+      <CheckBox fx:id="fri" layoutX="709.0" layoutY="409.0" mnemonicParsing="false" text="Fri" />
+      <CheckBox fx:id="sat" layoutX="783.0" layoutY="409.0" mnemonicParsing="false" text="Sat" />
+      <CheckBox fx:id="sun" layoutX="709.0" layoutY="440.0" mnemonicParsing="false" text="Sun" />
+   </children>
+</AnchorPane>

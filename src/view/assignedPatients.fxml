@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fx:id="assignedpatients_list" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" vbarPolicy="NEVER" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AssignedPatientsController">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="900.0">
+         <children>
+            <Label alignment="CENTER" layoutX="107.0" layoutY="31.0" prefHeight="82.0" prefWidth="779.0" style="-fx-background-color: #58D68D;" text="Assigned Patients" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="48.0" />
+               </font>
+            </Label>
+            <Circle fill="#e8ac35" layoutX="143.0" layoutY="72.0" radius="53.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
+            <ImageView fitHeight="91.0" fitWidth="88.0" layoutX="101.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/girl.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="home" fitHeight="51.0" fitWidth="51.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/icons8-home-page-50.png" />
+               </image>
+            </ImageView>
+            <ListView fx:id="assignedlist" layoutX="-5.0" layoutY="195.0" prefHeight="400.0" prefWidth="900.0" />
+            <Label layoutX="547.0" layoutY="141.0" prefHeight="40.0" prefWidth="111.0" text="SORT BY">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="sortby" layoutX="678.0" layoutY="145.0" prefHeight="31.0" prefWidth="195.0" />
+            
+         </children>
+         </AnchorPane>
+  </content>
+</ScrollPane>

@@ -24,7 +24,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import model.PatientModel;
+import model.GetPatientDetailsModel;
 import model.Patient;
 
 public class EditPatientController implements Initializable
@@ -73,7 +73,7 @@ public class EditPatientController implements Initializable
 		System.out.println(patientId);
 
 
-		patient = PatientModel.getPatientDataFromID(patientId);
+		patient = GetPatientDetailsModel.getPatientDataFromID(patientId);
 		setPatientData();
 
 		updateProfile.setOnMouseClicked(new EventHandler<MouseEvent>()
@@ -99,7 +99,7 @@ public class EditPatientController implements Initializable
 		patient.setContact(Long.parseLong(contact.getText()));
 		patient.setEmail(email.getText());
 		patient.setId(patientId);
-		PatientModel.updatePatientData(patient);
+		GetPatientDetailsModel.updatePatientData(patient);
 	}
 	public void goToHome() {
 		stage = (Stage)edit_profile_pane.getScene().getWindow();

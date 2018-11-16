@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" 
+fx:controller="controller.ReferDRController">
+   <children>
+      <Label alignment="CENTER" layoutX="172.0" layoutY="24.0" prefHeight="90.0" prefWidth="728.0" style="-fx-background-color: #58D68D;" text="Refer To Doctor" textFill="#f8f8f8">
+         <font>
+            <Font name="Calibri" size="48.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="114.0" fitWidth="131.0" layoutX="114.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/d1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="home" fitHeight="51.0" fitWidth="51.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/icons8-home-page-50.png" />
+         </image>
+      </ImageView>
+      <ListView fx:id="same_dept" layoutX="42.0" layoutY="177.0" prefHeight="397.0" prefWidth="383.0" />
+      <ListView fx:id="diff_dept" layoutX="486.0" layoutY="177.0" prefHeight="397.0" prefWidth="373.0" />
+      <Label layoutX="96.0" layoutY="142.0" text="Same Deptartment">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="572.0" layoutY="142.0" text="Different Deptartment">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

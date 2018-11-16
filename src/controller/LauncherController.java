@@ -84,9 +84,10 @@ public class LauncherController implements Initializable {
 						 System.out.println("IM patient");
 						 content = FXMLLoader.load(getClass().getResource("../view/patient_portal.fxml"));
 					 } else if(user.equals("doctor")) {
-						 //content = FXMLLoader.load(getClass().getResource("../view/patient_portal.fxml"));
+						 content = FXMLLoader.load(getClass().getResource("../view/doctor_portal.fxml"));
 					 }else if(user.equals("admin")) {
-						 //content = FXMLLoader.load(getClass().getResource("../view/patient_portal.fxml"));
+						 //content = FXMLLoader.load(getClass().getResource("../view/doctor_portal.fxml"));
+						 content = FXMLLoader.load(getClass().getResource("../view/admin.fxml"));
 					 }else {
 						 Alert errorAlert = new Alert(AlertType.ERROR);
 						 errorAlert.setHeaderText("Error");

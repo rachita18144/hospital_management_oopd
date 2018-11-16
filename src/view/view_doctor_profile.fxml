@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="599.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewDoctorProfileController">
+   <children>
+      <AnchorPane layoutX="34.0" layoutY="137.0" prefHeight="426.0" prefWidth="512.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Label fx:id="name" layoutX="21.0" layoutY="14.0" prefHeight="35.0" prefWidth="253.0" text="DR Bernadette Carr ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="department" layoutX="21.0" layoutY="80.0" prefHeight="27.0" prefWidth="135.0" text="CARDIOLOGIST">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <Label fx:id="label1" alignment="CENTER" layoutX="88.0" layoutY="19.0" prefHeight="78.0" prefWidth="811.0" style="-fx-background-color: #58D68D;" text="DOCTOR PROFILE" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="label2" alignment="CENTER" layoutX="26.0" layoutY="359.0" prefHeight="236.0" prefWidth="282.0" textFill="#252424">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Circle fill="#229954" layoutX="126.0" layoutY="58.0" radius="55.0" stroke="BLACK" strokeType="INSIDE" />
+      <ImageView fitHeight="101.0" fitWidth="104.0" layoutX="75.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/doctor.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="105.0" fitWidth="127.0" layoutX="379.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@doctor.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="564.0" layoutY="139.0" prefHeight="201.0" prefWidth="291.0" style="-fx-background-color: #F4D03F;" />
+      <Label layoutX="564.0" layoutY="366.0" prefHeight="182.0" prefWidth="291.0" style="-fx-background-color: #F4D03F;" />
+     
+      <Text layoutX="585.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text layoutX="629.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" SCHEDULE" wrappingWidth="134.56640625">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Label fx:id="days" alignment="CENTER" contentDisplay="CENTER" layoutX="601.0" layoutY="444.0" prefHeight="27.0" prefWidth="215.0" text="MON, TUE, SAT">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="time" layoutX="568.0" layoutY="490.0" prefHeight="27.0" prefWidth="282.0" text="11:00 AM - 8:00 PM">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="education" layoutX="55.0" layoutY="188.0" prefHeight="28.0" prefWidth="107.0" text="MBBS, MD">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="experience" layoutX="55.0" layoutY="242.0" prefHeight="17.0" prefWidth="200.0" text="12 Years Experience">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="bio" layoutX="56.0" layoutY="286.0" prefHeight="145.0" prefWidth="477.0" text="Passionate about quality primary care including acute and chronic medical, illnesses. Special interest in diabetes management and research, non-interventional and preventive cardiology." wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="639.0" layoutY="155.0" text="LOCATION">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="address" layoutX="594.0" layoutY="156.0" prefHeight="146.0" prefWidth="246.0" text="2, Tumkur Service Road, Goraguntepalya, Landmark: Near BMTC Bus Stop And Opposite Taj Vivanta, Bangalore" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="contact" layoutX="574.0" layoutY="289.0" text="Contact Information : 9876541234">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="home" fitHeight="51.0" fitWidth="43.0" layoutX="5.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/icons8-home-page-50.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

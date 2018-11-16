@@ -2,7 +2,33 @@ package model;
 
 import javafx.beans.property.SimpleStringProperty;
 
-public class Doctor extends Person{
+public class Doctor extends Person {
+	//--------------------saumya code -------------------------
+	
+	private DoctorProfile drProfile;
+
+	public Doctor()
+	{
+		drProfile=new DoctorProfile();
+	}
+
+	public DoctorProfile getDrProfile() {
+		return drProfile;
+	}
+
+	public void setDrProfile(DoctorProfile drProfile) {
+		this.drProfile = drProfile;
+	}
+
+	public void show()
+	{
+		System.out.println(" dId: "+this.getDrProfile().dID+"\n name: "+this.getFirstName()+" "+this.getLastName()+"\n desig "+this.getDrProfile().designation+"\n"
+				+ "education "+this.getDrProfile().getEducation()+"\nExp "+this.getDrProfile().getExperience()+"\n address "+this.getAddress()
+				+"\n dept "+this.getDrProfile().Dept+"\n contact "+this.contact+"\nbio: "+this.getDrProfile().getBio()
+				+"\n days "+this.getDrProfile().getSchedule().getDays()+"\ns_Time: "+this.getDrProfile().getSchedule().getStartTime());
+	}
+	///------------------------------------------------------------
+	
 
 	private SimpleStringProperty drID;
 	private SimpleStringProperty specialization;

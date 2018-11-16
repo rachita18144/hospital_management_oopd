@@ -17,7 +17,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import model.DoctorModel;
+import model.GetDoctorDetailsModel;
 import model.Doctor;
 
 public class BookAppointmentController implements Initializable{
@@ -52,7 +52,7 @@ public class BookAppointmentController implements Initializable{
 		ObservableList<Doctor> doctorObservableList = null;
 		ArrayList<Doctor> doctorList = null;
 		System.out.println(category);
-		doctorList = DoctorModel.getAllDoctorDetailsForCategory(category);
+		doctorList = GetDoctorDetailsModel.getAllDoctorDetailsForCategory(category);
 		categoryText = category;
 		doctor_label.setText(category);
 		System.out.println("size");

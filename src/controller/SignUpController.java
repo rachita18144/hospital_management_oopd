@@ -116,7 +116,7 @@ public class SignUpController implements Initializable {
 					 patient.setAge(Integer.parseInt(age.getText()));
 					 patient.setEmail(email_id.getText());
 					 patient.setWeight(Integer.parseInt(weight.getText()));
-					 patient.setWeight(Integer.parseInt(weight.getText()));
+					 patient.setHeight(Integer.parseInt(weight.getText()));
 
 					 boolean val = UserSignUp.storeSignUpDataForUser(patient);
 					 if(val) {

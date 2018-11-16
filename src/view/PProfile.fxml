@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PersonProfileController">
+   <children>
+      <Label alignment="CENTER" layoutX="139.0" layoutY="23.0" prefHeight="75.0" prefWidth="758.0" style="-fx-background-color: #58D68D;" text="Patient's Profile" textFill="#fffdfd">
+         <font>
+            <Font name="Calibri Light" size="48.0" />
+         </font>
+      </Label>
+      <Circle fill="#27ae60" layoutX="137.0" layoutY="61.0" radius="56.0" stroke="BLACK" strokeType="INSIDE" />
+      <ImageView fitHeight="96.0" fitWidth="101.0" layoutX="89.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/girl.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="23.0" layoutY="127.0" prefHeight="158.0" prefWidth="266.0" style="-fx-background-color: #229954;" />
+      <Label layoutX="23.0" layoutY="294.0" prefHeight="290.0" prefWidth="266.0" style="-fx-background-color: #229954;" />
+      <TextField fx:id="name" alignment="CENTER" editable="false"  layoutX="44.0" layoutY="144.0" pickOnBounds="false" prefHeight="30.0" prefWidth="213.0" text="Angelica Marshall">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Text fill="#eeeded" layoutX="44.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PID:" wrappingWidth="68.6708984375">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fill="#eeeded" layoutX="44.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TYPE:" wrappingWidth="68.6708984375">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="pid" editable="false" layoutX="125.0" layoutY="189.0" prefHeight="35.0" prefWidth="132.0" text="GN17262" />
+      <TextField fx:id="type" editable="false" layoutX="125.0" layoutY="236.0" prefHeight="35.0" prefWidth="132.0" text="OUT Patient" />
+      <Text fill="#eeeded" layoutX="78.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUMMARY:" wrappingWidth="145.6708984375">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="age" fill="#eeeded" layoutX="61.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="35" wrappingWidth="60.6708984375">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text fx:id="weight" fill="#eeeded" layoutX="167.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="56 Kg" wrappingWidth="112.00000941753387">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text fill="#eeeded" layoutX="61.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AGE" wrappingWidth="60.6708984375">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#eeeded" layoutX="167.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WEIGHT" wrappingWidth="79.6708984375">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f5" height="96.0" layoutX="135.0" layoutY="339.0" stroke="BLACK" strokeType="INSIDE" width="4.0" />
+      <ImageView fitHeight="112.0" fitWidth="132.0" layoutX="47.0" layoutY="451.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/standing-human-body-silhouette.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="height" fill="#eeeded" layoutX="150.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="170cm" wrappingWidth="112.00000941753387">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Button fx:id="pasthistory" layoutX="424.0" layoutY="151.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="414.0" style="-fx-background-color: #F4D03F;" text="Past History/Visits" textFill="#f8f8f8">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="refer_dr" layoutX="424.0" layoutY="451.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="414.0" style="-fx-background-color: #F4D03F;" text="Refer To Another DR" textFill="#f8f8f8">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="home" fitHeight="51.0" fitWidth="51.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/icons8-home-page-50.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="generateprescription" layoutX="424.0" layoutY="301.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="414.0" style="-fx-background-color: #F4D03F;" text="Generate Prescription" textFill="#f8f8f8">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

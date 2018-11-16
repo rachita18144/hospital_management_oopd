@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PrescriptionController">
+   <children>
+      <Label alignment="CENTER" layoutX="171.0" layoutY="18.0" prefHeight="86.0" prefWidth="730.0" style="-fx-background-color: #58D68D;" text="Prescription Slip" textFill="WHITE">
+         <font>
+            <Font name="Calibri" size="48.0" />
+         </font>
+      </Label>
+      <Circle fill="#27ae60" layoutX="196.0" layoutY="61.0" radius="59.0" stroke="BLACK" strokeType="INSIDE" />
+      <ImageView fitHeight="111.0" fitWidth="110.0" layoutX="141.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/icons8-treatment-48.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="34.0" layoutY="130.0" prefHeight="471.0" prefWidth="845.0" style="-fx-background-color: #27AE60;" />
+      <Label layoutX="55.0" layoutY="145.0" prefHeight="458.0" prefWidth="805.0" style="-fx-background-color: #ffffff;" />
+      <Text layoutX="261.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UCSF MEDICAL CENTER">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text fx:id="dname" layoutX="370.0" layoutY="-30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DR. Jessica Simpson">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dee3e0" height="3.0" layoutX="88.0" layoutY="256.0" stroke="#bcb7b7" strokeType="INSIDE" width="737.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dee3e0" height="3.0" layoutX="82.0" layoutY="373.0" stroke="#bcb7b7" strokeType="INSIDE" width="737.0" />
+      <Text layoutX="94.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PID :" wrappingWidth="43.27099609375" />
+      <Text layoutX="89.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NAME :" wrappingWidth="53.27099609375" />
+      <Text layoutX="366.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AGE :" wrappingWidth="53.27099609375" />
+      <Text layoutX="360.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WEIGHT :" wrappingWidth="64.27099609375" />
+      <Text layoutX="610.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONTACT :" wrappingWidth="80.27099609375" />
+      <Text layoutX="616.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE :" wrappingWidth="80.27099609375" />
+      <TextField fx:id="pid" layoutX="142.0" layoutY="275.0" prefHeight="24.0" prefWidth="136.0" text="GN17278" />
+      <TextField fx:id="name" layoutX="142.0" layoutY="325.0" prefHeight="24.0" prefWidth="136.0" text="Archie Andrews" />
+      <TextField fx:id="age" layoutX="430.0" layoutY="275.0" prefHeight="24.0" prefWidth="136.0" text="24" />
+      <TextField fx:id="weight" layoutX="430.0" layoutY="321.0" prefHeight="24.0" prefWidth="136.0" text="70" />
+      <TextField fx:id="contact" layoutX="690.0" layoutY="310.0" prefHeight="24.0" prefWidth="136.0" text="45423545" />
+      <TextField fx:id="date" layoutX="674.0" layoutY="201.0" prefHeight="24.0" prefWidth="136.0" text="27 October 2018" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dee3e0" height="151.0" layoutX="364.0" layoutY="377.0" stroke="BLACK" strokeType="INSIDE" width="4.0" />
+      <Text layoutX="97.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diagnosis" wrappingWidth="80.27098527550697">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="385.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medicines Prescribed" wrappingWidth="183.27098527550697">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="home" fitHeight="51.0" fitWidth="51.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/icons8-home-page-50.png" />
+         </image>
+      </ImageView>
+      <TextArea fx:id="diagnosis" layoutX="94.0" layoutY="411.0" prefHeight="101.0" prefWidth="262.0" text="High Fever, Stomach Ache, Shivering" />
+      <TextArea fx:id="medicines" layoutX="377.0" layoutY="411.0" prefHeight="101.0" prefWidth="233.0" text="Paracetamol, Cetrizine" />
+      <Button fx:id="save" layoutX="164.0" layoutY="535.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="625.0" style="-fx-background-color: #F4D03F;" text="SAVE " textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dee3e0" height="151.0" layoutX="625.0" layoutY="377.0" stroke="BLACK" strokeType="INSIDE" width="4.0" />
+      <Text layoutX="676.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lab Tests" wrappingWidth="183.27098527550697">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="labtest" layoutX="638.0" layoutY="411.0" prefHeight="101.0" prefWidth="191.0" text="Malaria" />
+      <Text layoutX="67.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DID :" wrappingWidth="43.27099609375" />
+      <Text layoutX="67.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SID :" wrappingWidth="43.27099609375" />
+      <TextField fx:id="did" layoutX="109.0" layoutY="164.0" prefHeight="21.0" prefWidth="99.0" text="GN103" />
+      <TextField fx:id="sid" layoutX="109.0" layoutY="204.0" prefHeight="21.0" prefWidth="99.0" text="37" />
+      <Label fx:id="dr_name" alignment="CENTER" contentDisplay="CENTER" layoutX="297.0" layoutY="191.0" prefHeight="27.0" prefWidth="262.0" text="Jessica Simpson" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="dr_dept" alignment="CENTER" contentDisplay="CENTER" layoutX="299.0" layoutY="219.0" prefHeight="27.0" prefWidth="262.0" text="CARDIOLOGY" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Comparator;
+
 public class Patient extends Person{
 	private String patientId;
 	private String type;
@@ -80,4 +82,34 @@ public class Patient extends Person{
 	public void setBill(int bill) {
 		this.bill = bill;
 	}
+	
+	//comparator classes
+	public static Comparator<Patient> NameComparator = new Comparator<Patient>() {
+
+		public int compare(Patient p1, Patient p2) {
+		   String patientName1 = p1.getFirstName()+p1.getLastName().toLowerCase();
+		   String patientName2 = p2.getFirstName()+p2.getLastName().toLowerCase();
+		   return patientName1.compareTo(patientName2);
+	    }};
+	    
+	    public static Comparator<Patient> IDComparator = new Comparator<Patient>() {
+
+	    	public int compare(Patient p1, Patient p2) {
+
+	    	   int pid1 = Integer.parseInt(p1.getpatientId());
+	    	   int pid2 = Integer.parseInt(p2.getpatientId());
+	    	   return pid1-pid2;
+
+	       }};
+	       
+	       public static Comparator<Patient> TypeComparator = new Comparator<Patient>() {
+
+		    	public int compare(Patient p1, Patient p2) {
+
+		    		String patientType1 = p1.getType();
+		    		String patientType2 = p2.getType();
+		    		 return patientType1.compareTo(patientType2);
+
+		       }};
+
 }

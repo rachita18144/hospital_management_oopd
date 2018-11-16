@@ -23,8 +23,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.Doctor;
-import model.DoctorModel;
-import model.PatientModel;
+import model.GetDoctorDetailsModel;
+import model.GetPatientDetailsModel;
 
 public class SelectDoctorController implements Initializable{
 	@FXML
@@ -115,10 +115,10 @@ public class SelectDoctorController implements Initializable{
 	}
 	public Doctor getDoctorFromSmartAlgorithm(){
 		String id = getIdFromFile();
-		String pid = PatientModel.getPatientIdFromId(id);
+		String pid = GetPatientDetailsModel.getPatientIdFromId(id);
 		String[] parts = pid.split("-");
 		String category = getCategoryFromPatientId(parts[0]);
-		ArrayList<Doctor> doctors = DoctorModel.getAllDoctorDetailsForCategory(category);
+		ArrayList<Doctor> doctors = GetDoctorDetailsModel.getAllDoctorDetailsForCategory(category);
 		int random = (int)(Math.random() * doctors.size()-1 + 0);
 		return doctors.get(random);
 	}
