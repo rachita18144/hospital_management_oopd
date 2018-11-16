@@ -26,7 +26,6 @@ public class BookAppointmentController implements Initializable{
     
 	@FXML
 	private ListView<Doctor> list_view;
-	private ObservableList<Doctor> doctorObservableList;
    
     @FXML
     private Label doctor_label;
@@ -37,8 +36,6 @@ public class BookAppointmentController implements Initializable{
 	Scene newscene;
 	Parent content;
 
-	static ArrayList<Doctor> doctorList;
-	
 	@Override
     public void initialize(URL url, ResourceBundle rb) {
 		System.out.println(categoryText);
@@ -52,6 +49,8 @@ public class BookAppointmentController implements Initializable{
 	}
 
 	public void initData(String category) {
+		ObservableList<Doctor> doctorObservableList = null;
+		ArrayList<Doctor> doctorList = null;
 		System.out.println(category);
 		doctorList = DoctorModel.getAllDoctorDetailsForCategory(category);
 		categoryText = category;
@@ -89,6 +88,18 @@ public class BookAppointmentController implements Initializable{
 			
 			newscene= new Scene(content);
 			stage.setScene(newscene);
+	}
+
+	public void goToHome() {
+		stage = (Stage)doctor_list.getScene().getWindow();
+		try {
+			content= FXMLLoader.load(getClass().getResource("../view/patient_portal.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+		newscene= new Scene(content);
+		stage.setScene(newscene);
+	}
+
 	}
 

@@ -54,7 +54,7 @@ public class DoctorListViewCell extends ListCell<Doctor> {
             }
         }
         System.out.println(doctor.getExperience());
-        experience.setText(doctor.getExperience());
+        experience.setText(Float.toString(doctor.getExperience()) + " Years of Experience");
         education.setText(doctor.getEducation());
         doctor_name.setText(doctor.getFirstName() + " " + doctor.getLastName());
         

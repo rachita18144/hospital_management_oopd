@@ -23,54 +23,54 @@ import model.Doctor;
 
 public class AppointmentDetailsController implements Initializable{
 	@FXML
-    private AnchorPane confirm_appt;
-    
-    @FXML
-    private Button book_appt;
-    
-    @FXML
-    private Text specialization;
+	private AnchorPane confirm_appt;
 
-    @FXML
-    private Text doctor_name;
+	@FXML
+	private Button book_appt;
 
-    @FXML
-    private Label schedule_days;
-    
-    @FXML
-    private Label experience;
-    
-    @FXML
-    private Label education;
+	@FXML
+	private Text specialization;
 
-    @FXML
-    private Label schedule_timings;
+	@FXML
+	private Text doctor_name;
 
-    @FXML
-    private Label bio;
+	@FXML
+	private Label schedule_days;
 
-    @FXML
-    private Label address;
-    
-    @FXML
-    private Label contact_number;
+	@FXML
+	private Label experience;
+
+	@FXML
+	private Label education;
+
+	@FXML
+	private Label schedule_timings;
+
+	@FXML
+	private Label bio;
+
+	@FXML
+	private Label address;
+
+	@FXML
+	private Label contact_number;
 
 	Stage stage;
 	Scene newscene;
 	Parent content;
 	Doctor doctor;
-	
+
 	@Override
-    public void initialize(URL url, ResourceBundle rb) {
+	public void initialize(URL url, ResourceBundle rb) {
 		book_appt.setOnMouseClicked(new EventHandler<MouseEvent>()
 		{
-    		public void handle(MouseEvent event)
-			  {
+			public void handle(MouseEvent event)
+			{
 				myhandle(event); 
-			  }
+			}
 		});
 	}
-	
+
 	public void setProfileData(Doctor doctor) {
 		String days = "";
 		String startTime = "";
@@ -78,7 +78,7 @@ public class AppointmentDetailsController implements Initializable{
 		this.doctor = doctor;
 		doctor_name.setText(doctor.getFirstName() + " " + doctor.getLastName());
 		specialization.setText(doctor.getSpecialization());
-		experience.setText(doctor.getExperience());
+		experience.setText(Float.toString(doctor.getExperience()) + " Years Experience");
 		education.setText(doctor.getEducation());
 		address.setText(doctor.getAddress());
 		bio.setText(doctor.getBio());
@@ -92,7 +92,7 @@ public class AppointmentDetailsController implements Initializable{
 		endTime = getStringEndTime(doctor.getSchedule().getEndTime());
 		schedule_timings.setText(startTime + " - " + endTime); 
 	}
-	
+
 	private String getStringEndTime(Date endTime) {
 		DateFormat dateFormat = new SimpleDateFormat("hh:mm a");
 		String formattedDate = dateFormat.format(endTime).toString();
@@ -107,27 +107,37 @@ public class AppointmentDetailsController implements Initializable{
 
 	public void myhandle(MouseEvent event)
 	{
-		 Node node = (Node) event.getSource();
-		 String s = node.getId();
-		 System.out.println(s);
-		 System.out.println("MOUSE CLICKED "+event.getSource());
-		 stage = (Stage)confirm_appt.getScene().getWindow();
-		 try
-		 { 
-			 if(s.equals("book_appt"))
-			 	{
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("../view/appointment_details.fxml"));
-                content = loader.load();
-                ConfirmAppointmentController controller = loader.getController();
-                controller.setDoctorData(doctor);
-				}
-			 
-		 }catch (IOException e)	{
-			  e.printStackTrace();
-		 }
-			newscene= new Scene(content);
-			stage.setScene(newscene);
+		Node node = (Node) event.getSource();
+		String s = node.getId();
+		System.out.println(s);
+		System.out.println("MOUSE CLICKED "+event.getSource());
+		stage = (Stage)confirm_appt.getScene().getWindow();
+		try
+		{ 
+			if(s.equals("book_appt"))
+			{
+				FXMLLoader loader = new FXMLLoader();
+				loader.setLocation(getClass().getResource("../view/appointment_details.fxml"));
+				content = loader.load();
+				ConfirmAppointmentController controller = loader.getController();
+				controller.setDoctorData(doctor);
+			}
+
+		}catch (IOException e)	{
+			e.printStackTrace();
 		}
+		newscene= new Scene(content);
+		stage.setScene(newscene);
 	}
+	public void goToHome() {
+		stage = (Stage)confirm_appt.getScene().getWindow();
+		try {
+			content= FXMLLoader.load(getClass().getResource("../view/patient_portal.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		newscene= new Scene(content);
+		stage.setScene(newscene);
+	}
+}
 

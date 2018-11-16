@@ -8,13 +8,13 @@ class Person
 	private SimpleStringProperty LastName;
 	private SimpleStringProperty address;
 	String email;
-	String contact;
+	long contact;
 	String dob;
 	String gender;
 
 	public Person () {}
 
-	public Person(String firstName, String lastName, String address, String contact, String dob, String gender) {
+	public Person(String firstName, String lastName, String address, long contact, String dob, String gender) {
 		this.firstName = new SimpleStringProperty(firstName);
 		this.LastName = new SimpleStringProperty(lastName);
 		this.address = new SimpleStringProperty(address);
@@ -56,10 +56,10 @@ class Person
 		this.address.set(addressVal);
 	}
 
-	public String getContact()
+	public long getContact()
 	{return contact;}
 
-	public void setContact(String contact) 
+	public void setContact(long contact) 
 	{this.contact = contact;}
 
 	public String getDob() 

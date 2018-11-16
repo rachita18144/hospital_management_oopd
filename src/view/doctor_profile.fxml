@@ -63,7 +63,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="experience" layoutX="55.0" layoutY="242.0" prefHeight="17.0" prefWidth="186.0" text="12 Years Experience">
+      <Label fx:id="experience" layoutX="55.0" layoutY="242.0" prefHeight="23.0" prefWidth="228.0" text="12 Years Experience">
          <font>
             <Font size="18.0" />
          </font>
@@ -89,5 +89,10 @@
          </font>
       </Label>
       <Label fx:id="contact_number" layoutX="735.0" layoutY="278.0" prefHeight="17.0" prefWidth="96.0" text="9876543212" />
+      <ImageView fx:id="home" fitHeight="52.0" fitWidth="54.0" layoutX="772.0" layoutY="33.0" onMouseClicked="#goToHome">
+         <image>
+            <Image url="@../../../../Downloads/home.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -32,7 +32,7 @@ public class ConfirmAppointmentController implements Initializable{
 
 	@FXML
 	private AnchorPane appt_pane;
-	
+
 	@FXML
 	private Button confirm_booking_appt;
 
@@ -141,6 +141,17 @@ public class ConfirmAppointmentController implements Initializable{
 			}
 
 		}catch (IOException e)	{
+			e.printStackTrace();
+		}
+		newscene= new Scene(content);
+		stage.setScene(newscene);
+	}
+
+	public void goToHome() {
+		stage = (Stage)appt_pane.getScene().getWindow();
+		try {
+			content= FXMLLoader.load(getClass().getResource("../view/patient_portal.fxml"));
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		newscene= new Scene(content);

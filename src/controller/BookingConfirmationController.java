@@ -42,6 +42,9 @@ public class BookingConfirmationController implements Initializable {
 
 	@FXML
 	private Label appt_time;
+	Stage stage;
+	Scene newscene;
+	Parent content;
 
 	public void setAppointmentConfirmationDetails(String doctorName, String time, String date) {
 		doctor_name.setText(doctorName);
@@ -52,5 +55,17 @@ public class BookingConfirmationController implements Initializable {
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
 	}
+	
+	public void goToHome() {
+		stage = (Stage)confirmation_pane.getScene().getWindow();
+		try {
+			content= FXMLLoader.load(getClass().getResource("../view/patient_portal.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		newscene= new Scene(content);
+		stage.setScene(newscene);
+	}
+
 
 }

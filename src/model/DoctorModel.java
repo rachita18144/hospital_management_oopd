@@ -13,23 +13,23 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class DoctorModel {
-	static ArrayList<Doctor> doctorList = new ArrayList<Doctor>();
 	public static ArrayList<Doctor> getAllDoctorDetailsForCategory(String category) {
+	ArrayList<Doctor> doctorList = new ArrayList<Doctor>();
 		try {
 			Connection conn = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
-			PreparedStatement stmt = conn.prepareStatement("SELECT doctor.*, schedule.* FROM doctor, schedule WHERE schedule.dID = doctor.dID AND specialization =?");
+			PreparedStatement stmt = conn.prepareStatement("SELECT doctor.*, schedule.* FROM doctor, schedule WHERE schedule.dID = doctor.dID AND dept =?");
 			stmt.setString(1, category);
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
 				Doctor doctor = new Doctor(rs.getString("first_name"),rs.getString("last_name"),rs.getString("address"),
-						rs.getString("contact"),rs.getString("dob"),rs.getString("gender")); 
+						Long.parseLong(rs.getString("contact")),rs.getString("dob"),rs.getString("gender")); 
 				doctor.setDrID(rs.getString("dID"));
 				doctor.setEducation(rs.getString("education"));
-				doctor.setExperience(rs.getString("experience"));
+				doctor.setExperience(rs.getFloat("experience"));
 				doctor.setBio(rs.getString("bio"));
-				doctor.setspecialization(rs.getString("specialization"));
-				doctor.setContact(rs.getString("contact"));
+				doctor.setspecialization(rs.getString("dept"));
+				doctor.setContact(Long.parseLong(rs.getString("contact")));
 				doctor.setBio(rs.getString("bio"));
 				doctor.setAddress(rs.getString("address"));
 
@@ -104,6 +104,7 @@ public class DoctorModel {
 	
 	//getting all doctors from db
 	public static ArrayList<Doctor> getAllDoctorDetails() {
+	ArrayList<Doctor> doctorList = new ArrayList<Doctor>();
 		try {
 			Connection conn = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
@@ -111,13 +112,13 @@ public class DoctorModel {
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
 				Doctor doctor = new Doctor(rs.getString("first_name"),rs.getString("last_name"),rs.getString("address"),
-						rs.getString("contact"),rs.getString("dob"),rs.getString("gender")); 
+						Long.parseLong(rs.getString("contact")),rs.getString("dob"),rs.getString("gender")); 
 				doctor.setDrID(rs.getString("dID"));
 				doctor.setEducation(rs.getString("education"));
-				doctor.setExperience(rs.getString("experience"));
+				doctor.setExperience(rs.getFloat("experience"));
 				doctor.setBio(rs.getString("bio"));
-				doctor.setspecialization(rs.getString("specialization"));
-				doctor.setContact(rs.getString("contact"));
+				doctor.setspecialization(rs.getString("dept"));
+				doctor.setContact(Long.parseLong(rs.getString("contact")));
 				doctor.setBio(rs.getString("bio"));
 				doctor.setAddress(rs.getString("address"));
 

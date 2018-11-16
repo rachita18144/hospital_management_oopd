@@ -78,9 +78,15 @@ public class LauncherController implements Initializable {
 				 	{
 					 String userNameValue = username.getText();
 					 String passwordValue = password.getText();
-					 boolean val = UserSignUp.checkUserAuthenticationDetails(userNameValue, passwordValue);
-					 if(val) {
+					 String user = UserSignUp.checkUserAuthenticationDetails(userNameValue, passwordValue);
+					 System.out.println(user);
+					 if(user.equals("patient")) {
+						 System.out.println("IM patient");
 						 content = FXMLLoader.load(getClass().getResource("../view/patient_portal.fxml"));
+					 } else if(user.equals("doctor")) {
+						 //content = FXMLLoader.load(getClass().getResource("../view/patient_portal.fxml"));
+					 }else if(user.equals("admin")) {
+						 //content = FXMLLoader.load(getClass().getResource("../view/patient_portal.fxml"));
 					 }else {
 						 Alert errorAlert = new Alert(AlertType.ERROR);
 						 errorAlert.setHeaderText("Error");

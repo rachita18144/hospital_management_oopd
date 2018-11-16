@@ -14,10 +14,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.input.MouseEvent;
 import model.UserSignUp;
+import model.Patient;
 
 
 public class SignUpController implements Initializable {
@@ -38,19 +40,49 @@ public class SignUpController implements Initializable {
 	    
 	    @FXML
 	    private TextField address;
+
+	    @FXML
+	    private TextField email_id;
 	    
 	    @FXML
 	    private TextField contact_details;
 	    
 	    @FXML
-	    private TextField email_id;
-	     
+	    private TextField age;
+
+	    @FXML
+	    private TextField weight;
+
+	    @FXML
+	    private TextField height;
+
+	    @FXML
+	    private ComboBox<String> type;
+
+	    @FXML
+	    private ComboBox<String> category;
+
 		Stage stage;
 		Scene newscene;
 		Parent content;
 		
 	    @Override
 	    public void initialize(URL url, ResourceBundle rb) {
+	    	
+	    	type.getItems().addAll(
+	    		    "opd",
+	    		    "local"
+	    		);
+
+	    	category.getItems().addAll(
+	    		    "cardiology",
+	    		    "orthopedics",
+	    		    "ent",
+	    		    "gynaecology",
+	    		    "medicine",
+	    		    "pedriatrician"
+	    		);
+
 	    	//action listeners
 	    	signup_button.setOnMouseClicked(new EventHandler<MouseEvent>()
 			{
@@ -63,6 +95,7 @@ public class SignUpController implements Initializable {
 	    
 		public void myhandle(MouseEvent event)
 		{
+			 Patient patient = new Patient();
 			 Node node = (Node) event.getSource();
 			 String s = node.getId();
 			 System.out.println(s);
@@ -72,16 +105,20 @@ public class SignUpController implements Initializable {
 			 { 
 				 if(s.equals("signup_button"))
 				 	{
+					 patient.setType(type.getValue());
+					 patient.setCategory(category.getValue());
 					 //get all the details from the text boxes and call the function in model which will enter details in database
-					 String firstName = first_name.getText();
-					 System.out.println(firstName);
-					 String lastName = last_name.getText();
-					 String passwordValue = password.getText();
-					 String addressValue = address.getText();
-					 String contactDetails = contact_details.getText();
-					 String dateOfBirth = "random";
-					 String emailId = email_id.getText();
-					 boolean val = UserSignUp.storeSignUpDataForUser(firstName, lastName, passwordValue, addressValue, contactDetails, dateOfBirth, emailId);
+					 patient.setFirstName(first_name.getText());
+					 patient.setLastName(last_name.getText());
+					 patient.setPassword(password.getText());
+					 patient.setAddress(address.getText());
+					 patient.setContact(Long.parseLong(contact_details.getText()));
+					 patient.setAge(Integer.parseInt(age.getText()));
+					 patient.setEmail(email_id.getText());
+					 patient.setWeight(Integer.parseInt(weight.getText()));
+					 patient.setWeight(Integer.parseInt(weight.getText()));
+
+					 boolean val = UserSignUp.storeSignUpDataForUser(patient);
 					 if(val) {
 						 content= FXMLLoader.load(getClass().getResource("../view/patient_portal.fxml"));
 					 }else {

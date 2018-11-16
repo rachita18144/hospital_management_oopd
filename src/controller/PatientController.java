@@ -20,9 +20,6 @@ public class PatientController implements Initializable {
 	private AnchorPane book_appointment;
 
 	@FXML
-	private AnchorPane view_doctor_profile;
-
-	@FXML
 	private AnchorPane patient_portal;
 
 	@FXML
@@ -40,14 +37,6 @@ public class PatientController implements Initializable {
 	public void initialize(URL url, ResourceBundle rb) {
 		//action listeners
 		book_appointment.setOnMouseClicked(new EventHandler<MouseEvent>()
-		{
-			public void handle(MouseEvent event)
-			{
-				myhandle(event); 
-			}
-		});
-
-		view_doctor_profile.setOnMouseClicked(new EventHandler<MouseEvent>()
 		{
 			public void handle(MouseEvent event)
 			{
@@ -83,10 +72,6 @@ public class PatientController implements Initializable {
 			if(s.equals("book_appointment"))
 			{
 				content= FXMLLoader.load(getClass().getResource("../view/patient_category.fxml"));
-			}
-			if(s.equals("view_doctor_profile"))
-			{
-				content= FXMLLoader.load(getClass().getResource("../view/doctor_profile.fxml"));
 			}
 			if(s.equals("search_doctor"))
 			{

@@ -3,17 +3,18 @@ package model;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Doctor extends Person{
-	
+
 	private SimpleStringProperty drID;
 	private SimpleStringProperty specialization;
 	private String education;
-	private String experience;
+	private float experience;
 	private String timings;
-	private String designation;
 	private String bio;
+	private String role;
+	private String level;
 	private Schedule schedule = new Schedule(); 
 
-	public Doctor(String firstName, String lastName,String address,String contact,String dob,String gender) {
+	public Doctor(String firstName, String lastName,String address,long contact,String dob,String gender) {
 		super(firstName, lastName, address, contact, dob, gender);
 	}
 
@@ -34,11 +35,11 @@ public class Doctor extends Person{
 	{
 		this.education = education;
 	}
-	public String getExperience() 
+	public float getExperience() 
 	{
 		return experience;
 	}
-	public void setExperience(String experience) {
+	public void setExperience(float experience) {
 		this.experience = experience;
 	}
 
@@ -48,13 +49,22 @@ public class Doctor extends Person{
 	public void setTimings(String timings) {
 		this.timings = timings;
 	}
-	public String getDesignation() {
-		return designation;
+	public String getRole() {
+		return role;
 	}
-	public void setDesignation(String designation) 
-	{
-		this.designation = designation;
+
+	public void setRole(String role) {
+		this.role = role;
 	}
+
+	public String getLevel() {
+		return level;
+	}
+
+	public void setLevel(String level) {
+		this.level = level;
+	}
+
 	public String getBio() 
 	{
 		return bio;

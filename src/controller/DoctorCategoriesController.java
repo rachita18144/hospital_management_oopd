@@ -110,5 +110,15 @@ public class DoctorCategoriesController implements Initializable{
 		 }
 			
 		}
+	public void goToHome() {
+		stage = (Stage)doctor_specializations.getScene().getWindow();
+		try {
+			content= FXMLLoader.load(getClass().getResource("../view/patient_portal.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		newscene= new Scene(content);
+		stage.setScene(newscene);
 	}
 
+	}

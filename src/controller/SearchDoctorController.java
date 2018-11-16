@@ -112,10 +112,10 @@ public class SearchDoctorController implements Initializable {
 				return false;
 			});
 		});
-		
-        SortedList<Doctor> sortedData = new SortedList<>(filteredData);
-        sortedData.comparatorProperty().bind(doctor_table.comparatorProperty());
-        doctor_table.setItems(sortedData);
+
+		SortedList<Doctor> sortedData = new SortedList<>(filteredData);
+		sortedData.comparatorProperty().bind(doctor_table.comparatorProperty());
+		doctor_table.setItems(sortedData);
 
 		//action listeners
 		doctor_table.setOnMouseClicked(new EventHandler<MouseEvent>()
@@ -129,25 +129,16 @@ public class SearchDoctorController implements Initializable {
 
 	public void myhandle(MouseEvent event)
 	{
-		/*Node node = (Node) event.getSource();
-			 String s = node.getId();
-			 System.out.println(s);
-			 System.out.println("MOUSE CLICKED "+event.getSource());
-			 stage = (Stage)patient_portal.getScene().getWindow();
-			 try
-			 { 
-				 if(s.equals("book_appointment"))
-				 	{
-					 content= FXMLLoader.load(getClass().getResource("../view/patient_category.fxml"));
-					}
+	}
 
-			 }catch (IOException e)	{
-				  e.printStackTrace();
-			 }
-
-				newscene= new Scene(content);
-				stage.setScene(newscene);
-		 */
+	public void goToHome() {
+		stage = (Stage)search_doctor_pane.getScene().getWindow();
+		try {
+			content= FXMLLoader.load(getClass().getResource("../view/patient_portal.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		newscene= new Scene(content);
+		stage.setScene(newscene);
 	}
 }
-
