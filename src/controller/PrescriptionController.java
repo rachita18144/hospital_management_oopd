@@ -55,9 +55,10 @@ public class PrescriptionController {
 				});
 		save.setOnMouseClicked(new EventHandler<MouseEvent>()
 		{
+			
 			  public void handle(MouseEvent event)
 			  {
-				 
+				  System.out.println("save inside");
 				 slip.setDiagnosis(diagnosis.getText());
 				 slip.setLabtests(labtest.getText());
 				 slip.setMedicines(medicines.getText());
@@ -99,6 +100,7 @@ public class PrescriptionController {
     	System.out.println(patient.getContact());
     	LocalDate today = LocalDate.now();         
     	Date curr_date = java.sql.Date.valueOf(today);
+    	did.setText(Integer.toString(DoctorModel.getDID()));
     	name.setText(patient.getFirstName()+" "+patient.getLastName());
 		pid.setText(patient.getpatientId());
 		weight.setText(Float.toString(patient.getWeight()));

@@ -66,13 +66,13 @@ public class DoctorController
 				myhandle(event); 
 			  }
 				});
-		/*logout.setOnMouseClicked(new EventHandler<MouseEvent>()
+		logout.setOnMouseClicked(new EventHandler<MouseEvent>()
 		{
 			  public void handle(MouseEvent event)
 			  {
 				myhandle(event); 
 			  }
-				});*/
+				});
 	}
 	
 	public void myhandle(MouseEvent event)
@@ -124,7 +124,7 @@ public class DoctorController
 			  }
 			  else if(s.equals("logout"))
 			  {
-				  content= FXMLLoader.load(getClass().getResource("/view/doctor_portal.fxml"));
+				  content= FXMLLoader.load(getClass().getResource("/view/login_screen.fxml"));
 				  System.out.println("LOGOUT");
 			  }
 		  }catch (IOException e) {e.printStackTrace();}

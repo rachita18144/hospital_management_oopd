@@ -67,8 +67,8 @@
             <Image url="@../../images/icons8-home-page-50.png" />
          </image>
       </ImageView>
-      <TextArea fx:id="diagnosis" layoutX="94.0" layoutY="411.0" prefHeight="101.0" prefWidth="262.0" text="High Fever, Stomach Ache, Shivering" />
-      <TextArea fx:id="medicines" layoutX="377.0" layoutY="411.0" prefHeight="101.0" prefWidth="233.0" text="Paracetamol, Cetrizine" />
+      <TextArea fx:id="diagnosis" layoutX="94.0" layoutY="411.0" prefHeight="101.0" prefWidth="262.0"  />
+      <TextArea fx:id="medicines" layoutX="377.0" layoutY="411.0" prefHeight="101.0" prefWidth="233.0"  />
       <Button fx:id="save" layoutX="164.0" layoutY="535.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="625.0" style="-fx-background-color: #F4D03F;" text="SAVE " textFill="WHITE">
          <font>
             <Font size="24.0" />
@@ -80,11 +80,11 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <TextArea fx:id="labtest" layoutX="638.0" layoutY="411.0" prefHeight="101.0" prefWidth="191.0" text="Malaria" />
+      <TextArea fx:id="labtest" layoutX="638.0" layoutY="411.0" prefHeight="101.0" prefWidth="191.0"  />
       <Text layoutX="67.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DID :" wrappingWidth="43.27099609375" />
       <Text layoutX="67.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SID :" wrappingWidth="43.27099609375" />
       <TextField fx:id="did" layoutX="109.0" layoutY="164.0" prefHeight="21.0" prefWidth="99.0" text="GN103" />
-      <TextField fx:id="sid" layoutX="109.0" layoutY="204.0" prefHeight="21.0" prefWidth="99.0" text="37" />
+      <TextField fx:id="sid" layoutX="109.0" layoutY="204.0" prefHeight="21.0" prefWidth="99.0"  />
       <Label fx:id="dr_name" alignment="CENTER" contentDisplay="CENTER" layoutX="297.0" layoutY="191.0" prefHeight="27.0" prefWidth="262.0" text="Jessica Simpson" textAlignment="CENTER">
          <font>
             <Font size="18.0" />

@@ -18,7 +18,8 @@ public class PatientModel
 	    {
 	    	try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
-			    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
+			   /* conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");*/
+				 conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
 	    	    } 
 	    	catch (SQLException e) 
 	    	{

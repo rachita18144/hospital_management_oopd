@@ -10,8 +10,9 @@ public class GetPatientDetailsModel {
 	public static Patient getPatientDataFromID(String id) {
 		Patient patient = new Patient();
 		try {
-			Connection conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
+			/*Connection conn = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");*/
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM patient WHERE id =?");
 			stmt.setString(1, id);
 			ResultSet rs = stmt.executeQuery();
@@ -32,8 +33,9 @@ public class GetPatientDetailsModel {
 
 	public static void updatePatientData(Patient data) {
 		try {
-			Connection conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
+			/*Connection conn = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");*/
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
 
 			PreparedStatement stmt = conn.prepareStatement("UPDATE patient SET first_name=?, last_name=?, email_id=?, address=?, contact=? WHERE id=?");
 			stmt.setString(1, data.getFirstName());
@@ -53,8 +55,9 @@ public class GetPatientDetailsModel {
 	public static String getPatientIdFromId(String id) {
 		String pID = "";
 		try {
-			Connection conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
+			/*Connection conn = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");*/
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
 			PreparedStatement stmt = conn.prepareStatement("SELECT pID FROM patient WHERE id =?");
 			stmt.setString(1, id);
 			ResultSet rs = stmt.executeQuery();

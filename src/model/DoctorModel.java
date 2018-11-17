@@ -24,8 +24,8 @@ public class DoctorModel
     {
     	try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-		    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
-		  
+		    //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
     	    } 
     	catch (SQLException e) 
     	{
@@ -109,7 +109,7 @@ public class DoctorModel
 			String role=getRole();
 			String level=getLevel();
 			String dept=getDept();
-			if(level.equals("junior"))
+			if(level.equalsIgnoreCase("junior"))
 			{
 			ps = conn.prepareStatement("select * from smartHealthSystem.DOCTOR WHERE level=? AND dept=?");
 			ps.setString(1,"senior");
@@ -143,7 +143,7 @@ public class DoctorModel
 			String level=getLevel();
 			String dept=getDept();
 			System.out.println("checking for diff dept list "+role);
-			if(role.equals("specialist"))
+			if(role.equalsIgnoreCase("specialist"))
 			{
 				System.out.println("sksk");
 			ps = conn.prepareStatement("select * from smartHealthSystem.DOCTOR WHERE dept<>?");

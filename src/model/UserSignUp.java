@@ -15,8 +15,10 @@ public class UserSignUp {
 		}
 
 		try {
-			Connection conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
+			//Connection conn = DriverManager.getConnection(
+				//	"jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		 Connection	conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
 			PreparedStatement smt = conn.prepareStatement("insert into patient(first_name,last_name,email_id,age,address,contact,password,weight,height,type,category,pID)"
 					+ "values(?,?,?,?,?,?,?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
 			smt.setString(1, patient.getFirstName());
@@ -117,8 +119,10 @@ public class UserSignUp {
 		}
 
 		try {
-			Connection conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
+			/*Connection conn = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");*/
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
 			PreparedStatement stmt = conn.prepareStatement("SELECT email_id, password, dID FROM doctor WHERE email_id =?");
 			stmt.setString(1, username);
 			ResultSet rs = stmt.executeQuery();
@@ -166,8 +170,10 @@ public class UserSignUp {
 		}
 
 		try {
-			Connection conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
+			/*Connection conn = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");*/
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
 			PreparedStatement stmt = conn.prepareStatement("SELECT email_id, password, id FROM patient WHERE email_id =?");
 			stmt.setString(1, username);
 			ResultSet rs = stmt.executeQuery();

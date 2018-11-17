@@ -17,7 +17,7 @@ style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/8.0.181" 
                   <Font name="Arial" size="36.0" />
                </font>
             </Label>
-            <Button layoutX="637.0" layoutY="23.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="109.0" style="-fx-background-color: #ffffff;" text="Logout" />
+            <Button fx:id="logout" layoutX="637.0" layoutY="23.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="109.0" style="-fx-background-color: #ffffff;" text="Logout" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="30.0" layoutY="132.0" prefHeight="414.0" prefWidth="267.0" style="-fx-background-color: #61D581;">

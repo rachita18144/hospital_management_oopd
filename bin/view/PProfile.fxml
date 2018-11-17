@@ -26,7 +26,7 @@
       </ImageView>
       <Label layoutX="23.0" layoutY="127.0" prefHeight="158.0" prefWidth="266.0" style="-fx-background-color: #229954;" />
       <Label layoutX="23.0" layoutY="294.0" prefHeight="290.0" prefWidth="266.0" style="-fx-background-color: #229954;" />
-      <TextField fx:id="name" alignment="CENTER" editable="false"  layoutX="44.0" layoutY="144.0" pickOnBounds="false" prefHeight="30.0" prefWidth="213.0" text="Angelica Marshall">
+      <TextField fx:id="name" alignment="CENTER" editable="false" layoutX="44.0" layoutY="144.0" pickOnBounds="false" prefHeight="30.0" prefWidth="213.0" text="Angelica Marshall">
          <font>
             <Font size="18.0" />
          </font>
@@ -74,7 +74,7 @@
             <Image url="@../../images/standing-human-body-silhouette.png" />
          </image>
       </ImageView>
-      <Text fx:id="height" fill="#eeeded" layoutX="150.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="170cm" wrappingWidth="112.00000941753387">
+      <Text fx:id="height" fill="#eeeded" layoutX="156.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="170" wrappingWidth="105.6709076166153">
          <font>
             <Font size="36.0" />
          </font>
@@ -99,5 +99,10 @@
             <Font size="36.0" />
          </font>
       </Button>
+      <Label layoutX="156.0" layoutY="502.0" text="cm" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

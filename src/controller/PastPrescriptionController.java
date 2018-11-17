@@ -11,11 +11,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import model.DoctorModel;
 import model.Patient;
 import model.PatientModel;
 import model.Prescription;
@@ -27,6 +29,9 @@ public class PastPrescriptionController
 	
 	@FXML
 	private TextField name,age,pid,weight,contact,date,did,sid;
+	
+	@FXML
+	private Label dr_name,dr_dept;
 	
 	@FXML
 	private TextArea diagnosis,medicines,labtest;
@@ -83,10 +88,13 @@ public class PastPrescriptionController
     	LocalDate today = LocalDate.now();         
     	name.setText(patient.getFirstName()+" "+patient.getLastName());
 		pid.setText(patient.getId());
+		did.setText(Integer.toString(DoctorModel.getDID()));
 		weight.setText(Float.toString(patient.getWeight()));
 		age.setText(Integer.toString(patient.getAge()));
 		contact.setText(Long.toString(patient.getContact()));
 		date.setText(today.toString());
+		dr_name.setText(PatientModel.getDRName(Integer.parseInt(slip.getdID())));
+		dr_dept.setText(PatientModel.getDRDept(Integer.parseInt(slip.getdID())));
 		setTextAreas();
     }
     

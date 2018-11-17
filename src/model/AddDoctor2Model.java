@@ -18,7 +18,8 @@ public class AddDoctor2Model {
 		
 	try {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-	  Connection  conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
+	 // Connection  conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
 	  PreparedStatement smt1 = conn.prepareStatement("insert into Doctor(dID,first_name,last_name,email_id,dob,address,contact,dept,education,experience,bio,role,level,password)"
 		 		+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 		 smt1.setString(1, docId);
