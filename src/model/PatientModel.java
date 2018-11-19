@@ -18,8 +18,8 @@ public class PatientModel
 	    {
 	    	try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
-			   /* conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");*/
-				 conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
+				 conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
+			//	 conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
 	    	    } 
 	    	catch (SQLException e) 
 	    	{
@@ -116,13 +116,14 @@ public class PatientModel
 	{
 		createConn();
 		Patient patient= new Patient();
+		System.out.println("id is "+id);
 		 try {
 			PreparedStatement ps = conn.prepareStatement("SELECT * FROM PATIENT WHERE id=?");
 			ps.setInt(1,Integer.parseInt(id));
 			ResultSet rs=ps.executeQuery();
 			if(rs.next()) 
 			 {System.out.println("found with"+id);
-				patient.setpatientId(Integer.toString(rs.getInt("pID")));
+				patient.setpatientId("pID");
 				patient.setId(Integer.toString(rs.getInt("id")));
 				patient.setFirstName(rs.getString("first_name"));
 				patient.setLastName(rs.getString("last_name"));
