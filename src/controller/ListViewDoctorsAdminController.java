@@ -15,6 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Doctor;
+import model.MyLogger;
 
 public class ListViewDoctorsAdminController extends ListCell<Doctor>{
 	
@@ -48,6 +49,7 @@ public class ListViewDoctorsAdminController extends ListCell<Doctor>{
             try {
                 loader.load();
             } catch (IOException e) {
+            	MyLogger.logInfo(this.getClass().getName(), e);
                 e.printStackTrace();
             }
         }
@@ -70,6 +72,7 @@ public class ListViewDoctorsAdminController extends ListCell<Doctor>{
                 controller.setProfileData(doctor);
                 stage.setScene(newscene);
             	}catch(Exception e) {
+            		MyLogger.logInfo(this.getClass().getName(), e);
             		e.printStackTrace();
             	}
             }                            

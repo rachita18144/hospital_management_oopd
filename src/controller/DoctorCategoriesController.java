@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.MyLogger;
 
 public class DoctorCategoriesController implements Initializable{
 	@FXML
@@ -106,6 +107,7 @@ public class DoctorCategoriesController implements Initializable{
 			 stage.setScene(newscene);
 			 
 		 }catch (IOException e)	{
+			 MyLogger.logInfo(this.getClass().getName(), e);
 			  e.printStackTrace();
 		 }
 			
@@ -115,6 +117,7 @@ public class DoctorCategoriesController implements Initializable{
 		try {
 			content= FXMLLoader.load(getClass().getResource("../view/patient_portal.fxml"));
 		} catch (IOException e) {
+			MyLogger.logInfo(this.getClass().getName(), e);
 			e.printStackTrace();
 		}
 		newscene= new Scene(content);

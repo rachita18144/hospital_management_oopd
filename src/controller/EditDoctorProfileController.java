@@ -19,6 +19,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.DoctorModel;
+import model.MyLogger;
 
 public class EditDoctorProfileController 
 {
@@ -108,7 +109,9 @@ public class EditDoctorProfileController
 				  content= FXMLLoader.load(getClass().getResource("/view/doctor_portal.fxml"));
 			  }
 			 
-		  }catch (IOException e) {e.printStackTrace();}
+		  }catch (IOException e) {
+			  MyLogger.logInfo(this.getClass().getName(), e);
+			  e.printStackTrace();}
 		
 			newscene= new Scene(content);
 			 stage.setScene(newscene);

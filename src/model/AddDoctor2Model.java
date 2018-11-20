@@ -58,6 +58,7 @@ public class AddDoctor2Model {
 		 conn.close();
 		 
 	}catch(Exception e) {
+		MyLogger.logInfo(AddDoctor2Model.class.getName(), e);
 		e.printStackTrace();
 	}
 	return true;

@@ -14,6 +14,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.MyLogger;
 import model.Patient;
 
 public class PatientItemCell extends ListCell<Patient>
@@ -95,7 +96,9 @@ public class PatientItemCell extends ListCell<Patient>
 				}
 			  
 			 
-		  }catch (IOException e) {e.printStackTrace();}
+		  }catch (IOException e) {
+			  MyLogger.logInfo(this.getClass().getName(), e);
+			  e.printStackTrace();}
 		
 			newscene= new Scene(content);
 			 stage.setScene(newscene);

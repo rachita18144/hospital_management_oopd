@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import model.MyLogger;
 
 public class ScheduleController 
 {
@@ -61,7 +62,9 @@ public class ScheduleController
 				  content= FXMLLoader.load(getClass().getResource("/view/doctor_portal.fxml"));
 			  }
 			 
-		  }catch (IOException e) {e.printStackTrace();}
+		  }catch (IOException e) {
+			  MyLogger.logInfo(this.getClass().getName(), e);
+			  e.printStackTrace();}
 		
 			newscene= new Scene(content);
 			 stage.setScene(newscene);

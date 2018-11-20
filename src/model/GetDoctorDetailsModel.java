@@ -16,9 +16,9 @@ public class GetDoctorDetailsModel {
 	public static ArrayList<Doctor> getAllDoctorDetailsForCategory(String category) {
 	ArrayList<Doctor> doctorList = new ArrayList<Doctor>();
 		try {
-			Connection conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
-			//Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
+			/*Connection conn = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");*/
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
 			PreparedStatement stmt = conn.prepareStatement("SELECT doctor.*, schedule.* FROM doctor, schedule WHERE schedule.dID = doctor.dID AND dept =?");
 			stmt.setString(1, category);
 			ResultSet rs = stmt.executeQuery();
@@ -62,6 +62,7 @@ public class GetDoctorDetailsModel {
 				doctorList.add(doctor);
 			}
 		}catch(Exception e) {
+			MyLogger.logInfo(GetDoctorDetailsModel.class.getName(), e);
 			e.printStackTrace();
 		}
 		return doctorList;
@@ -78,12 +79,13 @@ public class GetDoctorDetailsModel {
 			in.close();
 			patientId = sb.toString();
 		} catch (FileNotFoundException e) {
+			MyLogger.logInfo(GetDoctorDetailsModel.class.getName(), e);
 			e.printStackTrace();
 		}
 
 		try {
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
-			//Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
+			/*Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");*/
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
 			PreparedStatement smt = conn.prepareStatement("insert into appointments(dID,pID,appointment_date,appointment_time) "
 					+ "values(?,?,?,?)");
 			smt.setString(1, drID);
@@ -99,6 +101,7 @@ public class GetDoctorDetailsModel {
 			System.out.println(i);
 			conn.close();
 		}catch(Exception e) {
+			MyLogger.logInfo(GetDoctorDetailsModel.class.getName(), e);
 			e.printStackTrace();
 		}
 	} 
@@ -107,8 +110,8 @@ public class GetDoctorDetailsModel {
 	public static ArrayList<Doctor> getAllDoctorDetails() {
 	ArrayList<Doctor> doctorList = new ArrayList<Doctor>();
 		try {
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
-			//Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
+			//Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
 			PreparedStatement stmt = conn.prepareStatement("SELECT doctor.*, schedule.* FROM doctor, schedule WHERE schedule.dID = doctor.dID");
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
@@ -151,10 +154,13 @@ public class GetDoctorDetailsModel {
 				doctorList.add(doctor);
 			}
 		}catch(Exception e) {
+			MyLogger.logInfo(GetDoctorDetailsModel.class.getName(), e);
 			e.printStackTrace();
 		}
 		return doctorList;
 	}
+	
+	
 	
 }
 

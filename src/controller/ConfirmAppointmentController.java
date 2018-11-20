@@ -27,6 +27,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Doctor;
 import model.GetDoctorDetailsModel;
+import model.MyLogger;
 
 public class ConfirmAppointmentController implements Initializable{
 
@@ -141,6 +142,7 @@ public class ConfirmAppointmentController implements Initializable{
 			}
 
 		}catch (IOException e)	{
+			MyLogger.logInfo(this.getClass().getName(), e);
 			e.printStackTrace();
 		}
 		newscene= new Scene(content);
@@ -152,6 +154,7 @@ public class ConfirmAppointmentController implements Initializable{
 		try {
 			content= FXMLLoader.load(getClass().getResource("../view/patient_portal.fxml"));
 		} catch (IOException e) {
+			MyLogger.logInfo(this.getClass().getName(), e);
 			e.printStackTrace();
 		}
 		newscene= new Scene(content);

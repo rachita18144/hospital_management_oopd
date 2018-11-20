@@ -15,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.MyLogger;
 import model.Patient;
 import model.PatientModel;
 import model.Prescription;
@@ -94,7 +95,9 @@ public class PrescriptionItemCell extends ListCell<Prescription>
 					}
 				  
 				 
-			  }catch (IOException e) {e.printStackTrace();}
+			  }catch (IOException e) {
+				  MyLogger.logInfo(this.getClass().getName(), e);
+				  e.printStackTrace();}
 			
 				newscene= new Scene(content);
 				 stage.setScene(newscene);

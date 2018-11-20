@@ -24,12 +24,12 @@ public class DoctorModel
     {
     	try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-		    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
-			//conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
+		  //  conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
     	    } 
     	catch (SQLException e) 
     	{
-    	
+    		MyLogger.logInfo(this.getClass().getName(), e);
     		 System.out.println("SQLException: " + e.getMessage());
     		    System.out.println("SQLState: " + e.getSQLState());
     		    System.out.println("VendorError: " + e.getErrorCode());
@@ -37,6 +37,7 @@ public class DoctorModel
 		}
     	catch(ClassNotFoundException e)
     	{
+    		MyLogger.logInfo(this.getClass().getName(), e);
     		System.out.println("no conn created");
     	}
     }
@@ -96,7 +97,9 @@ public class DoctorModel
 		   }
 		   System.out.println(doc.getDrProfile().getSchedule().getDays());
 			ps.close();
-		    } catch (SQLException e) {e.printStackTrace();}
+		    } catch (SQLException e) {
+		    	MyLogger.logInfo(this.getClass().getName(), e);
+		    	e.printStackTrace();}
 
 		return doc;
 	}
@@ -169,7 +172,9 @@ public class DoctorModel
 		   System.out.println("size of diff dept log: "+drlist.size());
 			}
 			ps.close();
-		    } catch (SQLException e) {e.printStackTrace();}
+		    } catch (SQLException e) {e.printStackTrace();
+		    MyLogger.logInfo(this.getClass().getName(), e);
+		    }
 
 		return drlist;
 	}
@@ -221,7 +226,9 @@ public class DoctorModel
 		    ps.setInt(8,id);
 	
 		    ps.executeUpdate();
-		    } catch (SQLException e) {e.printStackTrace();}
+		    } catch (SQLException e) {e.printStackTrace();
+		    MyLogger.logInfo(this.getClass().getName(), e);
+		    }
 	}
 	public static int getDID()
 	{
@@ -238,6 +245,7 @@ public class DoctorModel
 		} catch (FileNotFoundException e) {
 			System.out.println("file not found");
 			e.printStackTrace();
+			MyLogger.logInfo(DoctorModel.class.getName(), e);
 		}
 		return  Integer.parseInt(doctorId);
 	}
@@ -256,6 +264,7 @@ public class DoctorModel
 			}
 		} catch (SQLException e) 
 		{
+			MyLogger.logInfo(this.getClass().getName(), e);
 			e.printStackTrace();
 		}
 		return role;
@@ -273,6 +282,7 @@ public class DoctorModel
 			}
 		} catch (SQLException e) 
 		{
+			MyLogger.logInfo(this.getClass().getName(), e);
 			e.printStackTrace();
 		}
 		return level;
@@ -290,6 +300,7 @@ public class DoctorModel
 			}
 		} catch (SQLException e) 
 		{
+			MyLogger.logInfo(this.getClass().getName(), e);
 			e.printStackTrace();
 		}
 		return dept;

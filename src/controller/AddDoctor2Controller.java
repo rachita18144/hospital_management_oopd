@@ -26,6 +26,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.AddDoctor2Model;
+import model.MyLogger;
 
 public class AddDoctor2Controller implements Initializable{
 	@FXML
@@ -260,6 +261,7 @@ public class AddDoctor2Controller implements Initializable{
 				}
 			 
 		 }catch (IOException e)	{
+			 MyLogger.logInfo(this.getClass().getName(), e);
 			  e.printStackTrace();
 		 }
 			

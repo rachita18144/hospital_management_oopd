@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.MyLogger;
 import model.UserSignUp;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -98,6 +99,7 @@ public class LauncherController implements Initializable {
 					}
 				 
 			 }catch (IOException e)	{
+				 MyLogger.logInfo(this.getClass().getName(), e);
 				  e.printStackTrace();
 			 }
 				

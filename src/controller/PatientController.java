@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.MyLogger;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -99,6 +100,7 @@ public class PatientController implements Initializable {
 
 
 		}catch (IOException e)	{
+			MyLogger.logInfo(this.getClass().getName(), e);
 			e.printStackTrace();
 		}
 

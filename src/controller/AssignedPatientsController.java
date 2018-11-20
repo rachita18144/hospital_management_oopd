@@ -17,6 +17,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import model.MyLogger;
 import model.Patient;
 import model.PatientModel;
 import javafx.collections.FXCollections;
@@ -107,7 +108,9 @@ public class AssignedPatientsController
 				  content= FXMLLoader.load(getClass().getResource("/view/doctor_portal.fxml"));
 			  }
 			 
-		  }catch (IOException e) {e.printStackTrace();}
+		  }catch (IOException e) {e.printStackTrace();
+		  MyLogger.logInfo(this.getClass().getName(), e);
+		  }
 		
 			newscene= new Scene(content);
 			 stage.setScene(newscene);

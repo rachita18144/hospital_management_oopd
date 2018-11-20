@@ -18,6 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import model.DoctorModel;
+import model.MyLogger;
 import model.Patient;
 import model.PatientModel;
 import model.Prescription;
@@ -88,7 +89,9 @@ public class PrescriptionController {
 				  pc.getPID(slip.getpID());
 			  }
 			 
-		  }catch (IOException e) {e.printStackTrace();}
+		  }catch (IOException e) {
+			  MyLogger.logInfo(this.getClass().getName(), e);
+			  e.printStackTrace();}
 		
 			newscene= new Scene(content);
 			 stage.setScene(newscene);

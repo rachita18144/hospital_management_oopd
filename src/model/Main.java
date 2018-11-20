@@ -16,6 +16,7 @@ public class Main extends Application {
 	        stage.setScene(scene);
 	        stage.show();
 		} catch(Exception e) {
+			MyLogger.logInfo(this.getClass().getName(), e);
 			e.printStackTrace();
 		}
 	}

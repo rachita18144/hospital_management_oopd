@@ -18,6 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import model.MyLogger;
 import model.Patient;
 import model.PatientModel;
 
@@ -118,7 +119,9 @@ public class PersonProfileController
 					 pvc.initData(patient);
 			  }
 			 
-		  }catch (IOException e) {e.printStackTrace();}
+		  }catch (IOException e) {e.printStackTrace();
+		  MyLogger.logInfo(this.getClass().getName(), e);
+		  }
 		
 			newscene= new Scene(content);
 			 stage.setScene(newscene);	 

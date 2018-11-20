@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import model.DoctorModel;
 import model.DoctorProfile;
+import model.MyLogger;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -127,7 +128,9 @@ public class DoctorController
 				  content= FXMLLoader.load(getClass().getResource("/view/login_screen.fxml"));
 				  System.out.println("LOGOUT");
 			  }
-		  }catch (IOException e) {e.printStackTrace();}
+		  }catch (IOException e) {
+			  MyLogger.logInfo(this.getClass().getName(), e);
+			  e.printStackTrace();}
 		
 			newscene= new Scene(content);
 			 stage.setScene(newscene);

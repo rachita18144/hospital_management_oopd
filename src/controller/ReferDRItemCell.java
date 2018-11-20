@@ -18,6 +18,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.Doctor;
+import model.MyLogger;
 import model.Patient;
 
 public class ReferDRItemCell extends ListCell<Doctor>
@@ -54,6 +55,7 @@ public class ReferDRItemCell extends ListCell<Doctor>
             try {
                 loader.load();
             } catch (IOException e) {
+            	MyLogger.logInfo(this.getClass().getName(), e);
                 e.printStackTrace();
             }
         }

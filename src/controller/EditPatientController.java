@@ -25,6 +25,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.GetPatientDetailsModel;
+import model.MyLogger;
 import model.Patient;
 
 public class EditPatientController implements Initializable
@@ -57,7 +58,8 @@ public class EditPatientController implements Initializable
 	String patientId = ""; 
 
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	public void initialize(URL location, ResourceBundle resources) 
+	{
 		Scanner in;
 		try {
 			in = new Scanner(new FileReader("p_id.txt"));
@@ -68,6 +70,7 @@ public class EditPatientController implements Initializable
 			in.close();
 			patientId = sb.toString();
 		} catch (FileNotFoundException e) {
+			MyLogger.logInfo(this.getClass().getName(), e);
 			e.printStackTrace();
 		}
 		System.out.println(patientId);
@@ -104,8 +107,10 @@ public class EditPatientController implements Initializable
 	public void goToHome() {
 		stage = (Stage)edit_profile_pane.getScene().getWindow();
 		try {
+			
 			content= FXMLLoader.load(getClass().getResource("../view/patient_portal.fxml"));
 		} catch (IOException e) {
+			MyLogger.logInfo(this.getClass().getName(), e);
 			e.printStackTrace();
 		}
 		newscene= new Scene(content);

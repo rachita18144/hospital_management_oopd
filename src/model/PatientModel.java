@@ -18,11 +18,12 @@ public class PatientModel
 	    {
 	    	try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				 conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
-			//	 conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
+				// conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
+				 conn = DriverManager.getConnection("jdbc:mysql://localhost/smartHealthSystem?","root","mypass");
 	    	    } 
 	    	catch (SQLException e) 
 	    	{
+	    		MyLogger.logInfo(PatientModel.class.getName(), e);
 	    		 System.out.println("SQLException: " + e.getMessage());
 	    		    System.out.println("SQLState: " + e.getSQLState());
 	    		    System.out.println("VendorError: " + e.getErrorCode());
@@ -30,6 +31,7 @@ public class PatientModel
 			}
 	    	catch(ClassNotFoundException e)
 	    	{
+	    		MyLogger.logInfo(PatientModel.class.getName(), e);
 	    		System.out.println("no conn created");
 	    	}
 	    }
@@ -50,6 +52,7 @@ public class PatientModel
 			 }
 		} catch (SQLException e) 
 		{	
+			MyLogger.logInfo(PatientModel.class.getName(), e);
 			e.printStackTrace();
 		}
 		return patientList;
@@ -81,6 +84,7 @@ public class PatientModel
 			 }
 			 System.out.println(patient.getFirstName());
 		}catch(Exception e) {
+			MyLogger.logInfo(PatientModel.class.getName(), e);
 			e.printStackTrace();
 		}
 	return patient ;
@@ -107,7 +111,9 @@ public class PatientModel
                  slip.setsID(Integer.toString(last_inserted_id));
              }
              
-		}catch(Exception e) {e.printStackTrace();}
+		}catch(Exception e) {e.printStackTrace();
+		MyLogger.logInfo(PatientModel.class.getName(), e);
+		}
 		return slip;
 	}
 	
@@ -134,7 +140,9 @@ public class PatientModel
 				patient.setContact(rs.getLong("contact"));
 				patient.setAge(rs.getInt("age"));
 			 }
-		     } catch (SQLException e)  {e.printStackTrace(); }
+		     } catch (SQLException e)  {
+		    	 MyLogger.logInfo(PatientModel.class.getName(), e);
+		    	 e.printStackTrace(); }
 		 return patient;
 	}
 	public static int calDOB(Date d)
@@ -167,6 +175,7 @@ public class PatientModel
 			 }
 			 System.out.println(presList.size());
 		}catch(Exception e) {
+			MyLogger.logInfo(PatientModel.class.getName(), e);
 			e.printStackTrace();
 		}
 	return presList;
@@ -185,7 +194,9 @@ public class PatientModel
 			    String l=rs.getString("last_name");
 			    dname=s+" "+l;
 			 }
-		}catch(Exception e) {e.printStackTrace();}
+		}catch(Exception e) {
+			MyLogger.logInfo(PatientModel.class.getName(), e);
+			e.printStackTrace();}
 		return dname;
 	}
 	
@@ -202,7 +213,9 @@ public class PatientModel
 			     s= rs.getString("dept");
 			   
 			 }
-		}catch(Exception e) {e.printStackTrace();}
+		}catch(Exception e) {
+			e.printStackTrace();
+			MyLogger.logInfo(PatientModel.class.getName(), e);}
 		return s;
 	}
 }

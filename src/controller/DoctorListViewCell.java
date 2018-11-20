@@ -14,6 +14,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.Doctor;
+import model.MyLogger;
 
 public class DoctorListViewCell extends ListCell<Doctor> {
 
@@ -74,6 +75,7 @@ public class DoctorListViewCell extends ListCell<Doctor> {
                 controller.setProfileData(doctor);
                 stage.setScene(newscene);
             	}catch(Exception e) {
+            		MyLogger.logInfo(this.getClass().getName(), e);
             		e.printStackTrace();
             	}
             }                            

@@ -18,6 +18,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import model.GetDoctorDetailsModel;
+import model.MyLogger;
 import model.Doctor;
 
 public class BookAppointmentController implements Initializable{
@@ -83,6 +84,7 @@ public class BookAppointmentController implements Initializable{
 				 content= FXMLLoader.load(getClass().getResource("../view/doctor_profile.fxml"));
 				}
 		 }catch (IOException e)	{
+			 MyLogger.logInfo(this.getClass().getName(), e);
 			  e.printStackTrace();
 		 }
 			
@@ -95,6 +97,7 @@ public class BookAppointmentController implements Initializable{
 		try {
 			content= FXMLLoader.load(getClass().getResource("../view/patient_portal.fxml"));
 		} catch (IOException e) {
+			MyLogger.logInfo(this.getClass().getName(), e);
 			e.printStackTrace();
 		}
 		newscene= new Scene(content);

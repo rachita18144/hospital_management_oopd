@@ -19,6 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.input.MouseEvent;
 import model.UserSignUp;
+import model.MyLogger;
 import model.Patient;
 
 
@@ -131,6 +132,7 @@ public class SignUpController implements Initializable {
 					}
 				 
 			 }catch (IOException e)	{
+				 MyLogger.logInfo(this.getClass().getName(), e);
 				  e.printStackTrace();
 			 }
 				newscene= new Scene(content);

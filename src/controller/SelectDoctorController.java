@@ -25,6 +25,7 @@ import javafx.stage.Stage;
 import model.Doctor;
 import model.GetDoctorDetailsModel;
 import model.GetPatientDetailsModel;
+import model.MyLogger;
 
 public class SelectDoctorController implements Initializable{
 	@FXML
@@ -97,6 +98,7 @@ public class SelectDoctorController implements Initializable{
 			}
 
 		}catch (IOException e)	{
+			MyLogger.logInfo(this.getClass().getName(), e);
 			e.printStackTrace();
 		}
 		newScene= new Scene(content);
@@ -108,6 +110,7 @@ public class SelectDoctorController implements Initializable{
 		try {
 			content= FXMLLoader.load(getClass().getResource("../view/patient_portal.fxml"));
 		} catch (IOException e) {
+			MyLogger.logInfo(this.getClass().getName(), e);
 			e.printStackTrace();
 		}
 		newScene= new Scene(content);
@@ -167,6 +170,7 @@ public class SelectDoctorController implements Initializable{
 			in.close();
 			patientId = sb.toString();
 		} catch (FileNotFoundException e) {
+			MyLogger.logInfo(this.getClass().getName(), e);
 			e.printStackTrace();
 		}
 		return patientId;

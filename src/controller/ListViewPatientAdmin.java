@@ -15,6 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Doctor;
+import model.MyLogger;
 import model.Patient;
 
 public class ListViewPatientAdmin extends ListCell<Patient>{
@@ -49,6 +50,7 @@ public class ListViewPatientAdmin extends ListCell<Patient>{
             try {
                 loader.load();
             } catch (IOException e) {
+            	MyLogger.logInfo(this.getClass().getName(), e);
                 e.printStackTrace();
             }
         }
@@ -71,6 +73,7 @@ public class ListViewPatientAdmin extends ListCell<Patient>{
                 controller.passData(patient);
                 stage.setScene(newscene);
             	}catch(Exception e) {
+            		MyLogger.logInfo(this.getClass().getName(), e);
             		e.printStackTrace();
             	}
             }                            

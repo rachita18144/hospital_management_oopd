@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.MyLogger;
 
 public class AdminController implements Initializable{
 	@FXML
@@ -85,6 +86,7 @@ public class AdminController implements Initializable{
 			 }
 			 
 		 }catch (IOException e)	{
+			 MyLogger.logInfo(this.getClass().getName(), e);
 			  e.printStackTrace();
 		 }
 			
