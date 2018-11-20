@@ -2,52 +2,50 @@ package model;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 public class DoctorModelTest {
 
-	@Test
-	public final void testCreateConn() {
-	}
-
+	DoctorModel dr = new DoctorModel();
 	@Test
 	public final void testViewDRProfile() {
-		fail("Not yet implemented"); // TODO
+		DoctorModel dr = new DoctorModel();
+		Doctor doc = dr.viewDRProfile();
+		assertNotNull(doc);
 	}
 
 	@Test
 	public final void testGetSameDeptDRProfile() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testGetDiffDeptDRProfile() {
-		fail("Not yet implemented"); // TODO
+		ArrayList<Doctor> doctorList = dr.getSameDeptDRProfile();
+		assertNotNull(doctorList);
 	}
 
 	@Test
 	public final void testEditDRProfile() {
-		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
 	public final void testGetDID() {
-		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
 	public final void testGetRole() {
-		fail("Not yet implemented"); // TODO
+		String role = dr.getRole();
+		assertNotNull(role);
 	}
 
 	@Test
 	public final void testGetLevel() {
-		fail("Not yet implemented"); // TODO
+		String level = dr.getLevel();
+		assertNotNull(level);
 	}
 
 	@Test
 	public final void testGetDept() {
-		fail("Not yet implemented"); // TODO
+		String doc = dr.getDept();
+		assertNotNull(doc);
 	}
 
 }
