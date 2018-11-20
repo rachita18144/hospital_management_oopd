@@ -61,7 +61,7 @@ public class PatientItemCell extends ListCell<Patient>
         }
        
         patient_name.setText(patient.getFirstName() + " " + patient.getLastName());
-        pid.setText(patient.getpatientId());
+        pid.setText(patient.getId());
         type.setText(patient.getType());
         setText(null);
         setGraphic(list_item_pane);

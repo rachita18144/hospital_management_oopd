@@ -102,12 +102,13 @@ public class PrescriptionController {
     	Date curr_date = java.sql.Date.valueOf(today);
     	did.setText(Integer.toString(DoctorModel.getDID()));
     	name.setText(patient.getFirstName()+" "+patient.getLastName());
-		pid.setText(patient.getpatientId());
+		pid.setText(patient.getId());
 		weight.setText(Float.toString(patient.getWeight()));
 		age.setText(Integer.toString(patient.getAge()));
 		contact.setText(Long.toString(patient.getContact()));
 		date.setText(today.toString());
 		slip.setDate(curr_date.toString());
+		System.out.println("id is....."+patient.getId());
 		slip.setpID(patient.getId());	
 		dr_name.setText(PatientModel.getDRName(DoctorModel.getDID()));
 		dr_dept.setText(PatientModel.getDRDept(DoctorModel.getDID()));

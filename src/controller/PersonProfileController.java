@@ -128,7 +128,7 @@ public class PersonProfileController
 	{
 		this.patient=patient;
 		name.setText(patient.getFirstName()+" "+patient.getLastName());
-		pid.setText(patient.getpatientId());
+		pid.setText(patient.getId());
 		type.setText(patient.getType());
 		weight.setText(Float.toString(patient.getWeight()));
 		height.setText(Float.toString(patient.getHeight()));

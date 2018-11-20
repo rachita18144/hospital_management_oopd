@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.input.MouseEvent;
 
@@ -27,6 +28,9 @@ public class PatientController implements Initializable {
 
 	@FXML
 	private AnchorPane edit_profile;
+	
+	@FXML
+	private Button logout;
 
 	Stage stage;
 	Scene newscene;
@@ -58,6 +62,13 @@ public class PatientController implements Initializable {
 				myhandle(event); 
 			}
 		});
+		logout.setOnMouseClicked(new EventHandler<MouseEvent>()
+		{
+			  public void handle(MouseEvent event)
+			  {
+				myhandle(event); 
+			  }
+		});
 	}  
 
 	public void myhandle(MouseEvent event)
@@ -81,6 +92,11 @@ public class PatientController implements Initializable {
 			{
 				content= FXMLLoader.load(getClass().getResource("../view/editPatientProfile.fxml"));
 			}
+			if(s.equals("logout"))
+			{
+				  content= FXMLLoader.load(getClass().getResource("/view/login_screen.fxml"));
+			}
+
 
 		}catch (IOException e)	{
 			e.printStackTrace();

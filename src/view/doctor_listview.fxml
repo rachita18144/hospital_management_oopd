@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="listview_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewDoctorListAdmin">
+   <children>
+      <Label fx:id="doctor_label" alignment="CENTER" layoutX="135.0" layoutY="38.0" prefHeight="78.0" prefWidth="746.0" style="-fx-background-color: #58D68D;" text="List Of Doctors" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <ListView fx:id="list_view" layoutX="23.0" layoutY="147.0" prefHeight="419.0" prefWidth="855.0" style="-fx-background-color: #F4D03F;" />
+      <Circle fill="#ffbf1f" layoutX="94.0" layoutY="77.0" radius="64.0" stroke="BLACK" strokeType="INSIDE" />
+      <ImageView fitHeight="88.0" fitWidth="88.0" layoutX="48.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/doctor.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class GetPatientDetailsModel {
 
@@ -70,4 +71,33 @@ public class GetPatientDetailsModel {
 		}
 		return pID;
 	}
+
+	public static ArrayList<Patient> getPatientDetails() {
+		Patient patient = new Patient();
+		ArrayList<Patient> patientList = new ArrayList<Patient>();
+			try {
+				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartHealthSystem?allowPublicKeyRetrieval=true&useSSL=false", "shs", "qwerty");
+				PreparedStatement stmt = conn.prepareStatement("SELECT * FROM patient");
+				ResultSet rs = stmt.executeQuery();
+				while(rs.next()) {
+					patient.setFirstName(rs.getString("first_name"));	
+					patient.setLastName(rs.getString("last_name"));	
+					patient.setpatientId(rs.getString("pID"));
+					patient.setCategory(rs.getString("category"));
+					patient.setEmail(rs.getString("email_id"));
+					patient.setAddress(rs.getString("address"));
+					patient.setPassword(rs.getString("password"));
+					patient.setContact(Long.parseLong(rs.getString("contact")));
+					patient.setType(rs.getString("type"));
+					patient.setWeight(rs.getFloat("weight"));
+					patient.setHeight(rs.getFloat("height"));
+					patient.setAge(rs.getInt("age"));
+					System.out.println("pid" + rs.getString("pID"));
+				patientList.add(patient);
+				}
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			return patientList;
+		}
 }

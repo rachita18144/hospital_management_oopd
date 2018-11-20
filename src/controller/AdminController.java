@@ -44,6 +44,21 @@ public class AdminController implements Initializable{
 				myhandle(event);
 			  }
 		});
+    	view_doctors.setOnMouseClicked(new EventHandler<MouseEvent>()
+		{
+    		public void handle(MouseEvent event)
+			  {
+				myhandle(event);
+			  }
+		});
+    	
+    	view_patients.setOnMouseClicked(new EventHandler<MouseEvent>()
+		{
+    		public void handle(MouseEvent event)
+			  {
+				myhandle(event);
+			  }
+		});
     }  
     
 	public void myhandle(MouseEvent event)
@@ -58,6 +73,15 @@ public class AdminController implements Initializable{
 			 if(s.equals("add_doctors"))
 			 {
 				content= FXMLLoader.load(getClass().getResource("../view/addDr1.fxml"));
+			 }
+			 if(s.equals("view_doctors"))
+			 {
+				content= FXMLLoader.load(getClass().getResource("../view/doctor_listview.fxml"));
+			 }
+			 
+			 if(s.equals("view_patients"))
+			 {
+				content= FXMLLoader.load(getClass().getResource("../view/patients_listview.fxml"));
 			 }
 			 
 		 }catch (IOException e)	{
