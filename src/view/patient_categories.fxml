@@ -110,7 +110,7 @@
       </ImageView>
       <ImageView fx:id="home" fitHeight="52.0" fitWidth="54.0" layoutX="782.0" layoutY="43.0" onMouseClicked="#goToHome">
          <image>
-            <Image url="@../../../../Downloads/home.png" />
+            <Image url="@../../images/home.png" />
          </image>
       </ImageView>
    </children>

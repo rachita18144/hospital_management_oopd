@@ -25,7 +25,7 @@
             <ListView fx:id="list_view" layoutX="23.0" layoutY="147.0" prefHeight="419.0" prefWidth="855.0" />
             <ImageView fx:id="home" fitHeight="52.0" fitWidth="54.0" layoutX="790.0" layoutY="56.0" onMouseClicked="#goToHome">
                <image>
-                  <Image url="@../../../../Downloads/home.png" />
+                  <Image url="@../../images/home.png" />
                </image>
             </ImageView>
          </children>
